@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  axonserver:
+    image: 'axoniq/axonserver:latest'
+    environment:
+      - 'AXONIQ_AXONSERVER_STANDALONE=TRUE'
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+  pgvector:
+    container_name: polyinformatiqueDb
+    image: 'pgvector/pgvector:pg16'
+    environment:
+      - POSTGRES_DB=polyinformatiqueDb
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+    volumes:
+      - polyinformatique_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - polyinformatique-net
+  pgadmin4:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8088:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: kunet@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: kounet
+    networks:
+      - polyinformatique-net
+volumes:
+  polyinformatique_data:
+
+networks:
+  polyinformatique-net:
+    driver: bridge

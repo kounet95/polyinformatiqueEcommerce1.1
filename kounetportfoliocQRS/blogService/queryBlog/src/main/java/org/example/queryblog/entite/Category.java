@@ -1,0 +1,26 @@
+package org.example.queryblog.entite;
+
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+
+import java.util.List;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Getter
+@Setter
+public class Category {
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String tag_id;
+
+    private String name;
+    private String description;
+
+    @OneToMany(mappedBy = "category")
+    private List<Article> articles;
+}
