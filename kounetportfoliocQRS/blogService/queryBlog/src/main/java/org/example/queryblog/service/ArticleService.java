@@ -1,58 +1,63 @@
 package org.example.queryblog.service;
 
-import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
-import org.example.polyinformatiquecoreapi.dto.ArticleDTO;
 import org.example.polyinformatiquecoreapi.event.PostCreatedEvent;
-import org.example.queryblog.entite.Article;
-import org.example.queryblog.entite.Category;
-import org.example.queryblog.entite.Tag;
-import org.example.queryblog.repos.ArticleRepository;
-import org.example.queryblog.repos.CategoryRepository;
-import org.example.queryblog.repos.TagRepository;
-import org.springframework.stereotype.Service;
+import org.example.queryblog.entite.*;
+import org.example.queryblog.repos.*;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
+
 @Slf4j
-@Transactional
-@Service
-@AllArgsConstructor
+@Component
+@RequiredArgsConstructor
 public class ArticleService {
 
     private final ArticleRepository articleRepository;
-    private final CategoryRepository categoryRepository;
+    private final DomainRepository domainRepository;
+    private final UtilisateurRepos utilisateurRepository;
+    private final CommentRepository commentRepository;
     private final TagRepository tagRepository;
 
     @EventHandler
     public void on(PostCreatedEvent event) {
-        log.info("**********************************");
-        log.info("un post created event");
+        // On récupère le domain par leur ID
+        Domain domain = domainRepository.findById(event.getArticleDTO().getDomainId())
+                .orElseThrow(() -> new RuntimeException("Domain not found"));
+      // On récupère l'utilisateur par leur ID
+        Utilisateurs utilisateur = utilisateurRepository.findById(event.getArticleDTO().getAuthorId())
+                .orElseThrow(() -> new RuntimeException("Utilisateur not found")).getUtilisateur();
 
-        ArticleDTO dto = event.getPayload();
+        // Recuperer les IDs de commentaires envoyes dans la commande
+        List<String> idsCommentaires = event.getArticleDTO().getCommentIds();
 
+     // Recuperer les commentaires qui correspondent à ces IDs dans la base
+        List<Comment> commentaires = commentRepository.findAllById(idsCommentaires);
+
+        // Recuperer les IDs de commentaires envoyes dans la commande
+        List<String> idsTags = event.getArticleDTO().getTagIds();
+
+     // Recuperer les commentaires qui correspondent à ces IDs dans la base
+        List<Tag> tags = tagRepository.findAllById(idsTags);
+
+
+
+
+        // creation d’un nouvel article à partir des données de l’événement
         Article article = Article.builder()
-                .id(dto.getId())
-                .title(dto.getTitle())
-                .contenu(dto.getContenu())
-                .urlMedia(dto.getUrlMedia())
-                .createdAt(dto.getCreatedAt())
-                .authorId(dto.getAuthorId())
+                .title(event.getArticleDTO().getTitle())
+                .content(event.getArticleDTO().getContent())
+                .urlMedia(event.getArticleDTO().getUrlMedia())
+                .createdAt(LocalDate.now())
+                .utilisateur(utilisateur)
+                .commentList(commentaires)
+                .tags(tags)
+                .domain(domain)
                 .build();
-
-        // Ensuite récupère la catégorie et les tags à partir de leur ID
-        Category category = categoryRepository.findById(dto.getCategoryId()).orElse(null);
-        article.setCategory(category);
-
-        List<Tag> tags = tagRepository.findAllById(dto.getTagIds());
-        article.setTags(tags);
 
         articleRepository.save(article);
     }
-
 }

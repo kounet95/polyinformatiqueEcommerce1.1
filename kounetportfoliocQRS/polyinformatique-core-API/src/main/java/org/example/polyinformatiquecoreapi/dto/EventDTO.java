@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 //===============================//
@@ -19,14 +20,16 @@ import java.util.List;
 @AllArgsConstructor
 public class EventDTO implements Serializable {
     private String id;
-    private String title;
     private String location;
-    private String contenu;
+    private LocalDateTime begin;
+    private LocalDateTime end;
+    private String content;
     private String urlMedia;
-
+    private String title;
     private LocalDate createdAt;
-
     private String authorId;
+    private String domainId;
     private List<String> tagIds;
-
+    private List<String> commentIds;
 }
+

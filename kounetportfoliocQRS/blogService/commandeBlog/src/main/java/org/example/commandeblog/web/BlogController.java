@@ -1,16 +1,15 @@
 package org.example.commandeblog.web;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
-
 import org.axonframework.eventsourcing.eventstore.EventStore;
-import org.example.polyinformatiquecoreapi.commands.CreatePostCommand;
+import org.example.polyinformatiquecoreapi.commands.*;
 import org.example.polyinformatiquecoreapi.dto.ArticleDTO;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.example.polyinformatiquecoreapi.dto.EventDTO;
+import org.example.polyinformatiquecoreapi.dto.NewsDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
@@ -22,6 +21,7 @@ public class BlogController {
 
     private final CommandGateway commandGateway;
     private final EventStore eventStore;
+
     public BlogController(CommandGateway commandGateway, EventStore eventStore) {
         this.commandGateway = commandGateway;
         this.eventStore = eventStore;
@@ -29,36 +29,150 @@ public class BlogController {
 
     @PostMapping("/create")
     public CompletableFuture<String> createArticle(@RequestBody ArticleDTO article) {
-        ArticleDTO postDTO = new ArticleDTO(
-                UUID.randomUUID().toString(),
-                article.getTitle(),
-                article.getContenu(),
+        String articleId = UUID.randomUUID().toString();
+        ArticleDTO articleDTO = new ArticleDTO(
+                articleId,
+                article.getContent(),
                 article.getUrlMedia(),
+                article.getTitle(),
                 article.getCreatedAt(),
                 article.getAuthorId(),
-                article.getCategoryId(),
+                article.getDomainId(),
+                article.getCommentIds(),
                 article.getTagIds()
         );
+        CreatePostCommand command = new CreatePostCommand(articleId, articleDTO);
+        return commandGateway.send(command);
+    }
 
-        CreatePostCommand command = new CreatePostCommand(
-                UUID.randomUUID().toString(),
-                postDTO
+    @PostMapping("/create-news")
+    public CompletableFuture<String> createNews(@RequestBody NewsDTO news) {
+        String newsId = UUID.randomUUID().toString();
+        NewsDTO newsDTO = new NewsDTO(
+                newsId,
+                news.getSummary(),
+                news.getContent(),
+                news.getUrlMedia(),
+                news.getTitle(),
+                news.getCreatedAt(),
+                news.getAuthorId(),
+                news.getDomainId(),
+                news.getCommentIds(),
+                news.getTagIds()
         );
+        CreateNewsCommand command = new CreateNewsCommand(newsId, newsDTO);
+        return commandGateway.send(command);
+    }
+
+    @PostMapping("/create-event")
+    public CompletableFuture<String> createEvent(@RequestBody EventDTO event) {
+        String eventId = UUID.randomUUID().toString();
+        EventDTO eventDTO = new EventDTO(
+                eventId,
+                event.getLocation(),
+                event.getBegin(),
+                event.getEnd(),
+                event.getContent(),
+                event.getUrlMedia(),
+                event.getTitle(),
+                event.getCreatedAt(),
+                event.getAuthorId(),
+                event.getDomainId(),
+                event.getCommentIds(),
+                event.getTagIds()
+        );
+        CreateEventCommand command = new CreateEventCommand(eventId, eventDTO);
+        return commandGateway.send(command);
+    }
+
+    @GetMapping("/events/{aggregateId}")
+    public Stream<?> eventsStream(@PathVariable String aggregateId) {
+        return eventStore.readEvents(aggregateId).asStream();
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> exceptionHandler(Exception exception) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("⚠️ Error: " + exception.getMessage());
+    }
+
+    @PutMapping("/update-article/{id}")
+    public CompletableFuture<String> updateArticle(@PathVariable String id, @RequestBody ArticleDTO article) {
+        ArticleDTO updatedArticle = new ArticleDTO(
+                id,
+                article.getContent(),
+                article.getUrlMedia(),
+                article.getTitle(),
+                article.getCreatedAt(),
+                article.getAuthorId(),
+                article.getDomainId(),
+                article.getTagIds(),
+                article.getCommentIds()
+
+
+
+
+
+        );
+        UpdatePostCommand command = new UpdatePostCommand(id, updatedArticle);
+        return commandGateway.send(command);
+    }
+
+    @PutMapping("/update-news/{id}")
+    public CompletableFuture<String> updateNews(@PathVariable String id, @RequestBody NewsDTO news) {
+        NewsDTO updatedNews = new NewsDTO(
+                id,
+                news.getSummary(),
+                news.getContent(),
+                news.getUrlMedia(),
+                news.getTitle(),
+                news.getCreatedAt(),
+                news.getAuthorId(),
+                news.getDomainId(),
+                news.getCommentIds(),
+                news.getTagIds()
+        );
+        UpdateNewsCommand command = new UpdateNewsCommand(id, updatedNews);
+        return commandGateway.send(command);
+    }
+
+    @PutMapping("/update-event/{id}")
+    public CompletableFuture<String> updateEvent(@PathVariable String id, @RequestBody EventDTO event) {
+        EventDTO updatedEvent = new EventDTO(
+                id,
+                event.getLocation(),
+                event.getBegin(),
+                event.getEnd(),
+                event.getContent(),
+                event.getUrlMedia(),
+                event.getTitle(),
+                event.getCreatedAt(),
+                event.getAuthorId(),
+                event.getDomainId(),
+                event.getCommentIds(),
+                event.getTagIds()
+        );
+        UpdateEventCommand command = new UpdateEventCommand(id, updatedEvent);
+        return commandGateway.send(command);
+    }
+
+    @DeleteMapping("/delete-article/{id}")
+    public CompletableFuture<String> deleteArticle(@PathVariable String id) {
+        DeleteItemCommand command = new DeleteItemCommand(id);
+        return commandGateway.send(command);
+    }
+
+    @DeleteMapping("/delete-news/{id}")
+    public CompletableFuture<String> deleteNews(@PathVariable String id) {
+        DeleteItemCommand command = new DeleteItemCommand(id);
 
         return commandGateway.send(command);
     }
 
-    @GetMapping("/events/{roomId}")
-    public Stream eventsStream(@PathVariable String roomId) {
-        return eventStore.readEvents(roomId).asStream();
+    @DeleteMapping("/delete-event/{id}")
+    public CompletableFuture<String> deleteEvent(@PathVariable String id) {
+        DeleteItemCommand command = new DeleteItemCommand(id);
+        return commandGateway.send(command);
     }
 
-
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> exceptionHandler(Exception exception) {
-        ResponseEntity<String> entity = new ResponseEntity<>(
-                exception.getMessage(),
-                HttpStatus.INTERNAL_SERVER_ERROR);
-        return entity;
-    }
 }

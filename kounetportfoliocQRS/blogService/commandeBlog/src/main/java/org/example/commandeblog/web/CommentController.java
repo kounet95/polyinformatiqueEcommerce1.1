@@ -1,7 +1,5 @@
 package org.example.commandeblog.web;
 
-
-
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.example.polyinformatiquecoreapi.commands.AddCommentCommand;
@@ -31,16 +29,19 @@ public class CommentController {
 
     @PostMapping("/create")
     public CompletableFuture<String> create(@RequestBody CommentDTO dto) {
-        return commandGateway.send(new AddCommentCommand(
+        String commentId = UUID.randomUUID().toString();
 
-                        UUID.randomUUID().toString(),  // commentId
-                        dto.getPostId(),               // postId/articleId
-                        dto
-
-                ));
+        return commandGateway.send(
+                new AddCommentCommand(commentId,  dto)
+        );
     }
 
-
+    @DeleteMapping("/delete/{commentId}")
+    public CompletableFuture<String> delete(@PathVariable String commentId, @RequestParam String itemId) {
+        return commandGateway.send(
+                new DeleteCommentCommand(itemId, commentId)
+        );
+    }
 
     @GetMapping("/events/{id}")
     public List<Object> getEvents(@PathVariable String id) {

@@ -3,7 +3,7 @@ package org.example.commandeblog.web;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.example.polyinformatiquecoreapi.commands.CreateCategoryCommand;
-import org.example.polyinformatiquecoreapi.dto.CategoryDTO;
+import org.example.polyinformatiquecoreapi.dto.DomainDTO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
@@ -26,8 +26,9 @@ public class CategoryController {
     }
 
     @PostMapping("/create")
-    public CompletableFuture<String> create(@RequestBody CategoryDTO dto) {
-        return commandGateway.send(new CreateCategoryCommand(UUID.randomUUID().toString(), dto));
+    public CompletableFuture<String> create(@RequestBody DomainDTO dto) {
+        return commandGateway.send(new CreateCategoryCommand(
+                UUID.randomUUID().toString(), dto));
     }
 
     @GetMapping("/events/{id}")

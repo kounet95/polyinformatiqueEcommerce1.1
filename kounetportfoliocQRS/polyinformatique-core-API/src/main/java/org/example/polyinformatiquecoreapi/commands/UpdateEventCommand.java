@@ -2,15 +2,21 @@ package org.example.polyinformatiquecoreapi.commands;
 
 import org.example.polyinformatiquecoreapi.dto.EventDTO;
 
-public class UpdateEventCommand extends BaseCommand<String> {
-    private final EventDTO payload;
+import java.time.LocalDateTime;
 
-    public UpdateEventCommand(String id, EventDTO payload) {
+public class UpdateEventCommand extends BaseCommand<String> {
+    private final EventDTO event;
+    public UpdateEventCommand(
+            String id, EventDTO event
+
+            ) {
         super(id);
-        this.payload = payload;
+
+
+        this.event = event;
     }
 
-    public EventDTO getPayload() {
-        return payload;
+    public EventDTO getEvent() {
+        return event;
     }
 }

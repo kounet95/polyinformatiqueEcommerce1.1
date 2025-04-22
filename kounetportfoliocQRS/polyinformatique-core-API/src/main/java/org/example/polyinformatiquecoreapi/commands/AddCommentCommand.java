@@ -1,23 +1,19 @@
 package org.example.polyinformatiquecoreapi.commands;
 
 import org.example.polyinformatiquecoreapi.dto.CommentDTO;
+import org.example.polyinformatiquecoreapi.dto.ItemDTO;
 
 public class AddCommentCommand extends BaseCommand<String> {
-    private final String commentId;
-    private final CommentDTO payload;
+    private final CommentDTO commentDTO;
 
-    public AddCommentCommand(String id, String commentId, CommentDTO payload) {
+
+    public AddCommentCommand(String id, CommentDTO commentDTO) {
         super(id);
-        this.commentId = commentId;
-        this.payload = payload;
+        this.commentDTO = commentDTO;
+
     }
 
-    public String getCommentId() {
-        return commentId;
-    }
-
-    public CommentDTO getPayload() {
-        return payload;
+    public CommentDTO getCommentDTO() {
+        return commentDTO;
     }
 }
-

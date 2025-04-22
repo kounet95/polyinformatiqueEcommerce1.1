@@ -18,8 +18,7 @@ public class TagAggregate {
     private String id;
 
     private String title;
-    private String eventId;
-    private List<String> articleIds;
+    private List<String> itemIds;
 
     public TagAggregate() {}
 
@@ -33,8 +32,7 @@ public class TagAggregate {
     @EventSourcingHandler
     public void on(TagCreatedEvent event) {
         this.id = event.getId();
-        this.title = event.getPayload().getTitle();
-        this.eventId = event.getPayload().getEventId();
-        this.articleIds = event.getPayload().getArticleIds();
+        this.title = event.getPayload().getName();
+        this.itemIds = event.getPayload().getItemIds();
     }
 }

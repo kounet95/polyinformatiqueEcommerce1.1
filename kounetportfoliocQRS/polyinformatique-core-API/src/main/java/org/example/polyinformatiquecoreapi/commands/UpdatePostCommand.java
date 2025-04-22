@@ -2,15 +2,21 @@ package org.example.polyinformatiquecoreapi.commands;
 
 import org.example.polyinformatiquecoreapi.dto.ArticleDTO;
 
-public class UpdatePostCommand extends BaseCommand<String> {
-    private final ArticleDTO payload;
+import java.util.List;
 
-    public UpdatePostCommand(String id, ArticleDTO payload) {
+public class UpdatePostCommand extends BaseCommand<String> {
+  private final ArticleDTO article;
+
+    public UpdatePostCommand(
+            String id, ArticleDTO article
+
+            ) {
         super(id);
-        this.payload = payload;
+
+        this.article = article;
     }
 
-    public ArticleDTO getPayload() {
-        return payload;
+    public ArticleDTO getArticle() {
+        return article;
     }
 }

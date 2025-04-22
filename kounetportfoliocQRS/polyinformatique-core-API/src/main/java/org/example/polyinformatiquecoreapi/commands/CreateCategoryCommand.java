@@ -1,16 +1,16 @@
 package org.example.polyinformatiquecoreapi.commands;
 
-import org.example.polyinformatiquecoreapi.dto.CategoryDTO;
+import org.example.polyinformatiquecoreapi.dto.DomainDTO;
 
 public class CreateCategoryCommand extends BaseCommand<String> {
-    private final CategoryDTO payload;
+    private final DomainDTO payload;
 
-    public CreateCategoryCommand(String id, CategoryDTO payload) {
+    public CreateCategoryCommand(String id, DomainDTO payload) {
         super(id);
         this.payload = payload;
     }
 
-    public CategoryDTO getPayload() {
+    public DomainDTO getPayload() {
         return payload;
     }
 }

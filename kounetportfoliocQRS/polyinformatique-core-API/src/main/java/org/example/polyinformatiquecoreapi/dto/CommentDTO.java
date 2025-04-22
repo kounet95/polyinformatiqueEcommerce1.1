@@ -14,16 +14,34 @@ import java.time.LocalDate;
 //===============================//
 //========= COMMENT ============//
 //===============================//
-@Getter
+
 @AllArgsConstructor
+@NoArgsConstructor
 public class CommentDTO implements Serializable {
     private String id;
-    private String contenu;
-    private String urlMedia;
-    private String postId;
+   private String contenu;
     private LocalDate createdAt;
-
     private String authorId;
+    private String itemId;
 
+    public String getAuthorId() {
+        return authorId;
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getContenu() {
+        return contenu;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getItemId() {
+        return itemId;
+    }
 }
+

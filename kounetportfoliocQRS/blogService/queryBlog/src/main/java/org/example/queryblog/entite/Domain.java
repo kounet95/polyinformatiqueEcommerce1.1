@@ -12,15 +12,13 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
-public class Category {
+public class Domain {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String tag_id;
-
     private String name;
     private String description;
-
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "domain")
     private List<Article> articles;
 }

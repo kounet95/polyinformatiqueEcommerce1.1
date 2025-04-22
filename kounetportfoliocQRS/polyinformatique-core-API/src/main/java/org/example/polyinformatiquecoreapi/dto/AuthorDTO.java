@@ -1,21 +1,27 @@
 package org.example.polyinformatiquecoreapi.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.List;
 
 //===============================//
-//============= TAG ============//
+//========= Author ============//
 //===============================//
 @Getter
 @AllArgsConstructor
-public class TagDTO implements Serializable {
+public class AuthorDTO implements Serializable {
+
     private String id;
+    private String username;
+    private String email;
     private String name;
+    private String phone;
+    private String address;
+
+    private List<String> commentIds;
     private List<String> itemIds;
 }

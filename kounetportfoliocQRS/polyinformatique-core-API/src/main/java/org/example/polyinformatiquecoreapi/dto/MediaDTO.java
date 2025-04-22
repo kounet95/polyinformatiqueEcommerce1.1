@@ -17,6 +17,5 @@ public class MediaDTO implements Serializable {
     private String id;
     private String fileName;
     private String fileType;
-
-
 }
+

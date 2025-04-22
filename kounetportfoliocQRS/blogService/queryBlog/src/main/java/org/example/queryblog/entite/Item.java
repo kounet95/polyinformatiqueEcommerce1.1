@@ -2,29 +2,49 @@ package org.example.queryblog.entite;
 
 
 import jakarta.persistence.*;
-import jakarta.ws.rs.GET;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-@Entity
-@Getter
-@Setter
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", length = 10)
+@Entity
 public abstract class Item {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-   private String contenu;
-   private String urlMedia;
-    private LocalDate createdAt;
-    private String authorId;
 
+    private String content;
+    private String urlMedia;
+    private String title;
+    private LocalDate createdAt;
+
+    @ManyToOne
+    @Setter(onMethod_ = {@__({@Autowired})})
+    private Utilisateurs utilisateur;
+
+    @OneToMany
+    private List<Media> mediaList;
+
+    @OneToMany
+    private List<Comment> commentList;
+
+    @ManyToMany
+    @JoinTable(
+            name = "tag_items",
+            joinColumns = @JoinColumn(name = "item_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private List<Tag> tags = new ArrayList<>();
 }

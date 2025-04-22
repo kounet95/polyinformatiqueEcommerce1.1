@@ -3,15 +3,13 @@ package org.example.polyinformatiquecoreapi.commands;
 import org.example.polyinformatiquecoreapi.dto.ArticleDTO;
 
 public class CreatePostCommand extends BaseCommand<String> {
-    private final ArticleDTO payload;
-
-    public CreatePostCommand(String id, ArticleDTO payload) {
+    private final ArticleDTO articleDTO;
+    public CreatePostCommand(String id,ArticleDTO articleDTO) {
         super(id);
-        this.payload = payload;
+        this.articleDTO = articleDTO;
     }
 
-    public ArticleDTO getPayload() {
-        return payload;
+    public ArticleDTO getArticleDTO() {
+        return articleDTO;
     }
 }
-

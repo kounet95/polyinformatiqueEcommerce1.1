@@ -3,14 +3,19 @@ package org.example.polyinformatiquecoreapi.commands;
 import org.example.polyinformatiquecoreapi.dto.NewsDTO;
 
 public class UpdateNewsCommand extends BaseCommand<String> {
-    private final NewsDTO payload;
+    private final NewsDTO newsDTO;
 
-    public UpdateNewsCommand(String id, NewsDTO payload) {
+    public UpdateNewsCommand(
+            String id, NewsDTO newsDTO
+
+            ) {
         super(id);
-        this.payload = payload;
+
+        this.newsDTO = newsDTO;
     }
 
-    public NewsDTO getPayload() {
-        return payload;
+    public NewsDTO getNewsDTO() {
+        return newsDTO;
     }
 }
+

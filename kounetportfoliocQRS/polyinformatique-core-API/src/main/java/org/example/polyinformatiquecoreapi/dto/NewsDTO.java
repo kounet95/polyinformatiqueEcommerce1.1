@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.List;
 
 //===============================//
 //=========== NEWS =============//
@@ -18,13 +19,15 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class NewsDTO implements Serializable {
     private String id;
-    private String title;
     private String summary;
-    private String contenu;
+    private String content;
     private String urlMedia;
-
+    private String title;
     private LocalDate createdAt;
-
     private String authorId;
+    private String domainId;
+    private List<String> tagIds;
+    private List<String> commentIds;
 
 }
+

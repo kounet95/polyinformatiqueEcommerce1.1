@@ -2,36 +2,21 @@ package org.example.polyinformatiquecoreapi.event;
 
 import org.example.polyinformatiquecoreapi.dto.EventDTO;
 
-import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
-public class EventCreatedEvent extends BaseEvent<String> implements Serializable {
-    private final EventDTO payload;
+public class EventCreatedEvent extends BaseEvent<String> {
+  private EventDTO eventDTO;
 
-    public EventCreatedEvent(String id, EventDTO payload) {
+    public EventCreatedEvent(String id, EventDTO eventDTO) {
         super(id);
-        this.payload = payload;
+
+        this.eventDTO = eventDTO;
     }
 
-    public EventDTO getPayload() {
-        return payload;
-    }
-}
 
-class EventUpdatedEvent extends BaseEvent<String> implements Serializable {
-    private final EventDTO payload;
-
-    public EventUpdatedEvent(String id, EventDTO payload) {
-        super(id);
-        this.payload = payload;
-    }
-
-    public EventDTO getPayload() {
-        return payload;
-    }
-}
-
-class EventDeletedEvent extends BaseEvent<String> implements Serializable {
-    public EventDeletedEvent(String id) {
-        super(id);
+    public EventDTO getEventDTO() {
+        return eventDTO;
     }
 }

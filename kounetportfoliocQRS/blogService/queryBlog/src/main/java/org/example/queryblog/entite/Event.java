@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +14,9 @@ import java.util.List;
 @Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @SuperBuilder
 @DiscriminatorValue("Event")
 public class Event extends Item{
-    @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    private String id;
-    private String name;
     private String location;
+    private LocalDateTime begin;
+    private LocalDateTime end;
 
 
 }

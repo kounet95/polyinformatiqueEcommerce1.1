@@ -11,13 +11,15 @@ import org.hibernate.annotations.GenericGenerator;
 @SuperBuilder
 @Getter
 @Setter
-@DiscriminatorValue("Media")
-public class Media extends Item{
+public class Media {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
     private String fileName;
     private String fileType;
+    @ManyToOne
+    @JoinColumn(name = "mediaList")
+    private Item item;
 
 }
