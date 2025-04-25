@@ -23,7 +23,8 @@ public class ArticleQueryController {
     @GetMapping("/articles")
     public CompletableFuture<List<ArticleDTO>> getAllArticle() {
         System.out.println(">>> Sending GetAllArticlesQuery");
-        return queryGateway.query(new GetAllArticlesQuery(), ResponseTypes.multipleInstancesOf(ArticleDTO.class));
+        return queryGateway.query(new GetAllArticlesQuery(),
+                ResponseTypes.multipleInstancesOf(ArticleDTO.class));
     }
 
 

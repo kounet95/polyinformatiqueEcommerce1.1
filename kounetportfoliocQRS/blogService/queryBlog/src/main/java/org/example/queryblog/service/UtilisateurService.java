@@ -29,7 +29,6 @@ public class UtilisateurService {
 
       List<Item> itemList= teamRepo.findAllById(event.getAuthor().getItemIds());
       List<Comment> commentList= commentRepo.findAllById(event.getAuthor().getCommentIds());
-
       Utilisateurs utilisateurs = Utilisateurs.builder()
               .username(event.getAuthor().getUsername())
               .phone(event.getAuthor().getPhone())
@@ -39,8 +38,7 @@ public class UtilisateurService {
               .items(itemList)
               .build();
 
-
-        utilisateurRepos.save(utilisateurs);
+      utilisateurRepos.save(utilisateurs);
 
      }
 
