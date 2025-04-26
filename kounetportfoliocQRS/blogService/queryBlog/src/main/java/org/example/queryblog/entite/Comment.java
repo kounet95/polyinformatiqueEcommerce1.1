@@ -19,7 +19,7 @@ public class Comment  {
     private String id;
     private LocalDate createdAt;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "commentList")
+    @JoinColumn(name = "comments")
     private Item item;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "commentList")

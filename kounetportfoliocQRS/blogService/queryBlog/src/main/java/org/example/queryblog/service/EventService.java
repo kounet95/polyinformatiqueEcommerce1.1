@@ -28,7 +28,7 @@ public class EventService {
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
 
         Utilisateurs utilisateur = utilisateurRepository.findById(event.getEventDTO().getAuthorId())
-                .orElseThrow(() -> new RuntimeException("Utilisateur not found")).getUtilisateur();
+                .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 
         // Recuperer les IDs de commentaires envoyes dans la commande
         List<String> idsCommentaires = event.getEventDTO().getCommentIds();
@@ -49,7 +49,7 @@ public class EventService {
                 .createdAt(event.getEventDTO().getCreatedAt())
                 .begin(event.getEventDTO().getBegin())
                 .end(event.getEventDTO().getEnd())
-                .commentList(commentaires)
+                .comments(commentaires)
                 .tags(tags)
                 .utilisateur(utilisateur)
                 .title(event.getEventDTO().getTitle())

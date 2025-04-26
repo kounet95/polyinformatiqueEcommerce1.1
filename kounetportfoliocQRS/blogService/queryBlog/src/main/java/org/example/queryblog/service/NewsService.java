@@ -29,7 +29,7 @@ public class NewsService {
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
 
         Utilisateurs utilisateur = utilisateurRepository.findById(event.getNewsDTO().getAuthorId())
-                .orElseThrow(() -> new RuntimeException("Utilisateur not found")).getUtilisateur();
+                .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 
         // Recuperer les IDs de commentaires envoyes dans la commande
         List<String> idsCommentaires = event.getNewsDTO().getCommentIds();
@@ -47,7 +47,7 @@ public class NewsService {
 
     News newsEtite = News.builder()
             .summary(event.getNewsDTO().getSummary())
-            .commentList(commentaires)
+            .comments(commentaires)
             .title(event.getNewsDTO().getTitle())
             .content(event.getNewsDTO().getContent())
             .tags(tags)

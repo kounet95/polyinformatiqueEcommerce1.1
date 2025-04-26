@@ -29,8 +29,8 @@ public class AuthorAggregate {
     @CommandHandler
     public AuthorAggregate(CreateAuthorCommand command) {
         AuthorDTO authorDTO = command.getAuthor();
-        CreateAuthorCommand createAuthorCommand = new CreateAuthorCommand(command.getId(), authorDTO);
-        AggregateLifecycle.apply(createAuthorCommand);
+        AuthorCreatedEvent authorCreatedEvent = new AuthorCreatedEvent(authorDTO.getId(),authorDTO);
+        AggregateLifecycle.apply(authorCreatedEvent);
     }
 
     @EventSourcingHandler

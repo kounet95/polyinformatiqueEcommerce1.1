@@ -31,14 +31,13 @@ public abstract class Item {
     private LocalDate createdAt;
 
     @ManyToOne
-    @Setter(onMethod_ = {@__({@Autowired})})
     private Utilisateurs utilisateur;
 
     @OneToMany
     private List<Media> mediaList;
 
     @OneToMany
-    private List<Comment> commentList;
+    private List<Comment> comments;
 
     @ManyToMany
     @JoinTable(

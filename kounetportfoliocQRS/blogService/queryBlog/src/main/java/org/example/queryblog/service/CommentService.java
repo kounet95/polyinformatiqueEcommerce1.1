@@ -26,7 +26,7 @@ public class CommentService {
 
         // On récupère l'utilisateur par leur ID
         Utilisateurs utilisateur = utilisateurRepos.findById(event.getCommentDTO().getAuthorId())
-                .orElseThrow(() -> new RuntimeException("Utilisateur not found")).getUtilisateur();
+                .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
         // On récupère l'item par leur ID
         Item item = teamRepo.findById(event.getCommentDTO().getItemId())
                 .orElseThrow(() -> new RuntimeException("Item not found"));

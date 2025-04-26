@@ -29,7 +29,7 @@ public class ArticleService {
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
       // On récupère l'utilisateur par leur ID
         Utilisateurs utilisateur = utilisateurRepository.findById(event.getArticleDTO().getAuthorId())
-                .orElseThrow(() -> new RuntimeException("Utilisateur not found")).getUtilisateur();
+                .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 
         // Recuperer les IDs de commentaires envoyes dans la commande
         List<String> idsCommentaires = event.getArticleDTO().getCommentIds();
@@ -53,7 +53,7 @@ public class ArticleService {
                 .urlMedia(event.getArticleDTO().getUrlMedia())
                 .createdAt(LocalDate.now())
                 .utilisateur(utilisateur)
-                .commentList(commentaires)
+                .comments(commentaires)
                 .tags(tags)
                 .domain(domain)
                 .build();
