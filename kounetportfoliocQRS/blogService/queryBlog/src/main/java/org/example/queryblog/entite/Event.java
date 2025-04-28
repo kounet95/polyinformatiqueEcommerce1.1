@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.security.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +16,10 @@ import java.util.List;
 @DiscriminatorValue("Event")
 public class Event extends Item{
     private String location;
-    private LocalDateTime begin;
-    private LocalDateTime end;
+    @Column(name = "begin_date")
+    private LocalDateTime  begin;
 
+    @Column(name = "end_date")
+    private LocalDateTime  end;
 
 }

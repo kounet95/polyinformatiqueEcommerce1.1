@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @AllArgsConstructor
-public class ArticleQueryHendler {
+public class ArticleQueryHandler {
 
     private final ArticleRepository articleRepository;
     private final DomainRepository categoryRepository;

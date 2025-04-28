@@ -13,9 +13,6 @@ import org.hibernate.annotations.GenericGenerator;
 @Setter
 @DiscriminatorValue("News")
 public class News extends Item{
-
     private String summary;
-
-
 
 }

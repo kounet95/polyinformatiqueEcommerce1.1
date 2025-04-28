@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/blog/author")
@@ -40,5 +41,10 @@ public class AuthorController {
         );
       CreateAuthorCommand command = new CreateAuthorCommand(authorId, authorDTO);
         return commandGateway.send(command);
+    }
+
+    @GetMapping("/events/{aggregateId}")
+    public Stream<?> eventsStream(@PathVariable String aggregateId) {
+        return eventStore.readEvents(aggregateId).asStream();
     }
 }

@@ -25,9 +25,11 @@ public class ArticleService {
     @EventHandler
     public void on(PostCreatedEvent event) {
         // On récupère le domain par leur ID
+        log.debug("Trying to find domain with ID: {}", event.getArticleDTO().getDomainId());
         Domain domain = domainRepository.findById(event.getArticleDTO().getDomainId())
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
-      // On récupère l'utilisateur par leur ID
+
+        // On récupère l'utilisateur par leur ID
         Utilisateurs utilisateur = utilisateurRepository.findById(event.getArticleDTO().getAuthorId())
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 

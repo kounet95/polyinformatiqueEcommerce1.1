@@ -10,6 +10,7 @@ import org.axonframework.spring.stereotype.Aggregate;
 import org.example.polyinformatiquecoreapi.commands.*;
 import org.example.polyinformatiquecoreapi.event.*;
 
+import java.security.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -37,8 +38,8 @@ public class ItemAggregate {
 
     // EVENT specific
     private String location;
-    private LocalDateTime begin;
-    private LocalDateTime end;
+    private LocalDateTime   begin;
+    private LocalDateTime  end;
     private boolean deleted;
     public ItemAggregate() {
         // Required by Axon

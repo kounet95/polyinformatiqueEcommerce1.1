@@ -25,7 +25,6 @@
 
 	<modules>
 		<module>blogService</module>
-		<module>customerService</module>
 		<module>polyinformatique-core-API</module>
 	</modules>
 

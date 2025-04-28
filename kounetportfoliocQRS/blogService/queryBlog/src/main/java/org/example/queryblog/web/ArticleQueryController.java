@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 @RequestMapping("query/article")
 @AllArgsConstructor
 public class ArticleQueryController {
-    private QueryGateway queryGateway;
+    private final QueryGateway queryGateway;
 
     @GetMapping("/articles")
     public CompletableFuture<List<ArticleDTO>> getAllArticle() {

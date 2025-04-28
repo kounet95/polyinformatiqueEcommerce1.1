@@ -16,6 +16,7 @@ public class Domain {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String id;
     private String tag_id;
     private String name;
     private String description;

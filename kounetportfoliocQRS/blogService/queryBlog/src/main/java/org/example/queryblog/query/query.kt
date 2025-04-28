@@ -1,3 +1,4 @@
 package org.example.queryblog.query
 
-class GetAllArticlesQuery();
+public class GetAllArticlesQuery {
+}

@@ -10,6 +10,7 @@
     <groupId>org.example</groupId>
     <artifactId>polyinformatique-core-API</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging> <!-- AJOUTE CECI -->
     <name>polyinformatique-core-API</name>
     <description>polyinformatique-core-API</description>
     <url/>
@@ -55,10 +56,14 @@
 
     <build>
         <plugins>
-            <plugin>
+            <!-- Désactivation du spring-boot-maven-plugin car c'est une bibliothèque, pas une application exécutable -->
+            <!-- <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+                <configuration>
+                    <classifier>exec</classifier>
+                </configuration>
+            </plugin> -->
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
