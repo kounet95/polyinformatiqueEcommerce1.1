@@ -138,10 +138,10 @@ services:
     networks:
       - polyinfDb-net
 
-  gatewayservice:
-    build: ./gatewayservice
-    image: gatewayservice
-    container_name: gatewayservice
+  getewayservice:
+    build: ./getewayservice
+    image: getewayservice
+    container_name: getewayservice
     ports:
       - '8888:8888'
     expose:
