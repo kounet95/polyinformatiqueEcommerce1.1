@@ -139,7 +139,7 @@ services:
       - polyinfDb-net
 
   gatewayservice:
-    build: ./gatewayservice
+    build: ./getwayservice
     image: gatewayservice
     container_name: gatewayservice
     ports:
