@@ -75,9 +75,9 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.6.0</version>
-			<scope>runtime</scope>
+			<version>42.7.3</version> <!-- ou la version compatible -->
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.testcontainers</groupId>

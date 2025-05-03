@@ -3,7 +3,7 @@ package org.example.queryblog.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
-import org.example.polyinformatiquecoreapi.event.PostCreatedEvent;
+import org.example.polyinformatiquecoreapi.event.*;
 import org.example.queryblog.entite.*;
 import org.example.queryblog.repos.*;
 import org.springframework.stereotype.Component;
@@ -24,31 +24,17 @@ public class ArticleService {
 
     @EventHandler
     public void on(PostCreatedEvent event) {
-        // On récupère le domain par leur ID
-        log.debug("Trying to find domain with ID: {}", event.getArticleDTO().getDomainId());
+        log.debug("Handling PostCreatedEvent: {}", event.getId());
+
         Domain domain = domainRepository.findById(event.getArticleDTO().getDomainId())
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
 
-        // On récupère l'utilisateur par leur ID
         Utilisateurs utilisateur = utilisateurRepository.findById(event.getArticleDTO().getAuthorId())
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 
-        // Recuperer les IDs de commentaires envoyes dans la commande
-        List<String> idsCommentaires = event.getArticleDTO().getCommentIds();
+        List<Comment> commentaires = commentRepository.findAllById(event.getArticleDTO().getCommentIds());
+        List<Tag> tags = tagRepository.findAllById(event.getArticleDTO().getTagIds());
 
-     // Recuperer les commentaires qui correspondent à ces IDs dans la base
-        List<Comment> commentaires = commentRepository.findAllById(idsCommentaires);
-
-        // Recuperer les IDs de commentaires envoyes dans la commande
-        List<String> idsTags = event.getArticleDTO().getTagIds();
-
-     // Recuperer les commentaires qui correspondent à ces IDs dans la base
-        List<Tag> tags = tagRepository.findAllById(idsTags);
-
-
-
-
-        // creation d’un nouvel article à partir des données de l’événement
         Article article = Article.builder()
                 .title(event.getArticleDTO().getTitle())
                 .content(event.getArticleDTO().getContent())
@@ -61,5 +47,33 @@ public class ArticleService {
                 .build();
 
         articleRepository.save(article);
+    }
+
+    @EventHandler
+    public void on(PostUpdatedEvent event) {
+        log.debug("Handling PostUpdatedEvent: {}", event.getId());
+
+        Article article = articleRepository.findById(event.getId())
+                .orElseThrow(() -> new RuntimeException("Article not found"));
+
+        Domain domain = domainRepository.findById(event.getDomainId())
+                .orElseThrow(() -> new RuntimeException("Domain not found"));
+
+        List<Tag> tags = tagRepository.findAllById(event.getTagIds());
+
+        article.setTitle(event.getTitle());
+        article.setContent(event.getContent());
+        article.setUrlMedia(event.getUrlMedia());
+        article.setDomain(domain);
+        article.setTags(tags);
+
+        articleRepository.save(article);
+    }
+
+    @EventHandler
+    public void on(ItemDeletedEvent event) {
+        log.debug("Handling ItemDeletedEvent: {}", event.getId());
+
+        articleRepository.deleteById(event.getId());
     }
 }
