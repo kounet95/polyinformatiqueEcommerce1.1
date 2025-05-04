@@ -1,4 +1,4 @@
-package org.example.queryblog.config;
+package org.example.ecpolyquery.config;
 
 import com.thoughtworks.xstream.XStream;
 import org.axonframework.serialization.xml.XStreamSerializer;
@@ -14,10 +14,10 @@ public class AxonConfig {
         XStream xStream = new XStream();
         // Autorise les classe
         xStream.allowTypesByWildcard(new String[] {
-                "org.example.polyinformatiquecoreapi.commands.**",
-                "org.example.polyinformatiquecoreapi.event.**",
-                "org.example.polyinformatiquecoreapi.dto.**",
-                "org.example.queryblog.query.**"
+                "org.example.polyinformatiquecoreapi.commandEcommerce.**",
+                "org.example.polyinformatiquecoreapi.eventEcommerce.**",
+                "org.example.polyinformatiquecoreapi.dtoEcommerce.**",
+                "org.example.ecpolyquery.query.**"
         });
         return xStream;
     }
@@ -30,4 +30,3 @@ public class AxonConfig {
                 .build();
     }
 }
-
