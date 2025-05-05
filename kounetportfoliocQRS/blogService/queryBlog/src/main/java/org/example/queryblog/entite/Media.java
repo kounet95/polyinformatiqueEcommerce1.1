@@ -16,6 +16,7 @@ public class Media {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    private String url;
     private String fileName;
     private String fileType;
     @ManyToOne
