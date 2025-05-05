@@ -10,7 +10,7 @@
         <module name="getwayservice" />
         <module name="configservice" />
       </profile>
-      <profile name="Annotation profile for polyinformatique-core-API" enabled="true">
+      <profile name="Annotation profile for ecommercePolyinformatique" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -20,8 +20,10 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
         </processorPath>
         <module name="polyinformatique-core-API" />
-        <module name="queryBlog" />
         <module name="commandeBlog" />
+        <module name="ecPolyQuery" />
+        <module name="ecPolyCommand" />
+        <module name="queryBlog" />
       </profile>
     </annotationProcessing>
   </component>
@@ -31,6 +33,9 @@
       <module name="commandeBlog" options="-parameters" />
       <module name="configservice" options="-parameters" />
       <module name="discoveryservice" options="-parameters" />
+      <module name="ecPolyCommand" options="-parameters" />
+      <module name="ecPolyQuery" options="-parameters" />
+      <module name="ecommercePolyinformatique" options="-parameters" />
       <module name="getwayservice" options="-parameters" />
       <module name="polyinformatique-core-API" options="-parameters" />
       <module name="queryBlog" options="-parameters" />
