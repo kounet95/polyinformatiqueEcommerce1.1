@@ -5,6 +5,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
 import org.example.polyinformatiquecoreapi.event.CommentAddedEvent;
+import org.example.polyinformatiquecoreapi.event.CommentEditedEvent;
+import org.example.polyinformatiquecoreapi.event.CommentDeletedEvent;
+import org.example.polyinformatiquecoreapi.event.ItemDeletedEvent;
 import org.example.queryblog.entite.Comment;
 import org.example.queryblog.entite.Item;
 import org.example.queryblog.entite.Utilisateurs;
@@ -21,8 +24,10 @@ public class CommentService {
     private final CommentRepository commentRepository;
     private final UtilisateurRepos utilisateurRepos;
     private final IteamRepository teamRepo;
+
     @EventHandler
     public void on(CommentAddedEvent event) {
+        log.debug("Handling CommentAddedEvent: {}", event.getId());
 
         // On récupère l'utilisateur par leur ID
         Utilisateurs utilisateur = utilisateurRepos.findById(event.getCommentDTO().getAuthorId())
@@ -38,6 +43,31 @@ public class CommentService {
                 .utilisateur(utilisateur)
                 .build();
         commentRepository.save(comment);
+    }
 
+    @EventHandler
+    public void on(CommentEditedEvent event) {
+        log.debug("Handling CommentEditedEvent: {}", event.getId());
+
+        Comment comment = commentRepository.findById(event.getId())
+                .orElseThrow(() -> new RuntimeException("Comment not found"));
+
+        comment.setContent(event.getNewContent());
+
+        commentRepository.save(comment);
+    }
+
+    @EventHandler
+    public void on(CommentDeletedEvent event) {
+        log.debug("Handling CommentDeletedEvent: {}", event.getId());
+
+        commentRepository.deleteById(event.getCommentId());
+    }
+
+    @EventHandler
+    public void on(ItemDeletedEvent event) {
+        log.debug("Handling ItemDeletedEvent: {}", event.getId());
+
+        commentRepository.deleteById(event.getId());
     }
 }

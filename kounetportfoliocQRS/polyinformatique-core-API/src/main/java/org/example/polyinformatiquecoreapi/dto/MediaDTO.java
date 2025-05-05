@@ -15,7 +15,23 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class MediaDTO implements Serializable {
     private String id;
+    private String url;
     private String fileName;
     private String fileType;
-}
 
+    public String getId() {
+        return id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public String getFileType() {
+        return fileType;
+    }
+}

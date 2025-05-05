@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
 import org.example.polyinformatiquecoreapi.event.EventCreatedEvent;
+import org.example.polyinformatiquecoreapi.event.EventUpdatedEvent;
+import org.example.polyinformatiquecoreapi.event.ItemDeletedEvent;
 import org.example.queryblog.entite.*;
 import org.example.queryblog.repos.*;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,8 @@ public class EventService {
 
     @EventHandler
     public void on(EventCreatedEvent event) {
+        log.debug("Handling EventCreatedEvent: {}", event.getId());
+
         // On récupère le domain et l'utilisateur par leur ID
         Domain domain = domainRepository.findById(event.getEventDTO().getDomainId())
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
@@ -42,9 +46,7 @@ public class EventService {
         // Recuperer les commentaires qui correspondent à ces IDs dans la base
         List<Tag> tags = tagRepository.findAllById(idsTags);
 
-
         //creation d'un event dans la base de donne
-
         Event eventEtite = Event.builder()
                 .createdAt(event.getEventDTO().getCreatedAt())
                 .begin(event.getEventDTO().getBegin())
@@ -59,5 +61,27 @@ public class EventService {
         eventRepository.save(eventEtite);
     }
 
+    @EventHandler
+    public void on(EventUpdatedEvent event) {
+        log.debug("Handling EventUpdatedEvent: {}", event.getId());
 
+        Event eventEntity = eventRepository.findById(event.getId())
+                .orElseThrow(() -> new RuntimeException("Event not found"));
+
+        eventEntity.setTitle(event.getTitle());
+        eventEntity.setContent(event.getContent());
+        eventEntity.setUrlMedia(event.getUrlMedia());
+        eventEntity.setLocation(event.getLocation());
+        eventEntity.setBegin(event.getBegin());
+        eventEntity.setEnd(event.getEnd());
+
+        eventRepository.save(eventEntity);
     }
+
+    @EventHandler
+    public void on(ItemDeletedEvent event) {
+        log.debug("Handling ItemDeletedEvent: {}", event.getId());
+
+        eventRepository.deleteById(event.getId());
+    }
+}

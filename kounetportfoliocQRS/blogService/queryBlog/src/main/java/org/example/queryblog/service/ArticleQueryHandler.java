@@ -1,6 +1,5 @@
 package org.example.queryblog.service;
 
-
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.queryhandling.QueryHandler;
@@ -8,12 +7,14 @@ import org.example.polyinformatiquecoreapi.dto.ArticleDTO;
 import org.example.queryblog.entite.Article;
 import org.example.queryblog.mapper.ArticleMapper;
 import org.example.queryblog.query.GetAllArticlesQuery;
+import org.example.queryblog.query.GetArticleByIdQuery;
 import org.example.queryblog.repos.ArticleRepository;
 import org.example.queryblog.repos.DomainRepository;
 import org.example.queryblog.repos.TagRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,12 +31,15 @@ public class ArticleQueryHandler {
     public List<ArticleDTO> on(GetAllArticlesQuery query) {
         List<Article> articles = articleRepository.findAll();
         return articles.stream()
-                .map(articleMapper::toDTO) // ton mapper MapStruct
+                .map(articleMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
-
-
-
-
+    @QueryHandler
+    public ArticleDTO on(GetArticleByIdQuery query) {
+        Optional<Article> optionalArticle = articleRepository.findById(query.getId());
+        return optionalArticle
+                .map(articleMapper::toDTO)
+                .orElseThrow(() -> new RuntimeException("Article not found with id: " + query.getId()));
+    }
 }

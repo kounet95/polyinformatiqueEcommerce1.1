@@ -164,6 +164,58 @@ services:
     networks:
       - polyinfDb-net
 
+  ecPolyCommand:
+    build: ./ecommercePolyinformatique/ecPolyCommand
+    image: ecpolycommand
+    container_name: ecPolyCommand
+    ports:
+      - '8083:8083'
+    expose:
+      - '8083'
+    environment:
+      - DISCOVERY_SERVICE_URL=http://discoveryservice:8761/eureka
+      - CONFIG_SERVICE_URL=http://configservice:9999
+      - AXON_AXONSERVER_SERVERS=axonserver:8124
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8083/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      axonserver:
+        condition: service_healthy
+      configservice:
+        condition: service_healthy
+    networks:
+      - polyinfDb-net
+
+  ecPolyQuery:
+    build: ./ecommercePolyinformatique/ecPolyQuery
+    image: ecpolyquery
+    container_name: ecPolyQuery
+    ports:
+      - '8084:8084'
+    expose:
+      - '8084'
+    environment:
+      - DISCOVERY_SERVICE_URL=http://discoveryservice:8761/eureka
+      - CONFIG_SERVICE_URL=http://configservice:9999
+      - AXON_AXONSERVER_SERVERS=axonserver:8124
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8084/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      axonserver:
+        condition: service_healthy
+      ecPolyCommand:
+        condition: service_healthy
+    networks:
+      - polyinfDb-net
+
 volumes:
   polyinfDb_data:
   axonserver_data:

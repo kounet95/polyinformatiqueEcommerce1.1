@@ -12,11 +12,12 @@ public class AxonConfig {
     @Bean
     public XStream xStream() {
         XStream xStream = new XStream();
-        // Autorise la classe CreatePostCommand
+        // Autorise les classe
         xStream.allowTypesByWildcard(new String[] {
                 "org.example.polyinformatiquecoreapi.commands.**",
                 "org.example.polyinformatiquecoreapi.event.**",
-                "org.example.polyinformatiquecoreapi.dto.**"
+                "org.example.polyinformatiquecoreapi.dto.**",
+                "org.example.queryblog.query.**"
         });
         return xStream;
     }
