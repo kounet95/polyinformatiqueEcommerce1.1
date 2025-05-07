@@ -1,7 +1,7 @@
 // src/components/BlogFormPage.js
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createArticle } from '../actions/articleActions';
+import React, {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {createArticle, fetchArticles, fetchDomains} from '../actions/articleActions';
 
 import HeaderComponent from '../components/HeaderComponent';
 
@@ -9,8 +9,14 @@ import HeaderComponent from '../components/HeaderComponent';
 const BlogFormPage = () => {
     const dispatch = useDispatch();
     const [articleData , setArticleData] = useState({
-        author:'', title: '', content: '', tags: '', selectedFile : ''
+        authorId:'1', title: '', content: '', tags: '', urlMedia : '', domainId:'1', tagIds:[], commentIds:[]
     });
+    const { domains, loading, error } = useSelector(state => state.domains);
+    useEffect(() => {
+        dispatch(fetchDomains());
+    }, [dispatch]);
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(createArticle(articleData));

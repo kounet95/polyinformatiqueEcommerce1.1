@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/domains")
 @RequiredArgsConstructor
+@CrossOrigin
 public class DomainQueryController {
 
     private final QueryGateway queryGateway;

@@ -3,11 +3,15 @@ import axios from 'axios';
 
 // URL de l'API
 //const API_URL = 'http://localhost:8888/BLOGSERVICE/api/blog/articles';
-const API_URL = 'http://localhost:5000/article';
+const API_URL_ARTICLES = 'http://localhost:8082/query/article/articles';
+const API_URL_DOMAINS = 'http://localhost:8082/domains';
+
 
 
 // Action Types
 export const FETCH_ARTICLES = 'FETCH_ARTICLES';
+export const FETCH_DOMAINS = 'FETCH_DOMAINS';
+
 export const FETCH_ARTICLE = 'FETCH_ARTICLE';
 
 export const CREATE_ARTICLE = 'CREATE_ARTICLE';
@@ -16,11 +20,11 @@ export const DELETE_ARTICLE = 'DELETE_ARTICLE';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_ERROR = 'SET_ERROR';
 
-// Actions
+// Actions articles
 export const fetchArticles = () => async (dispatch) => {
     try {
         dispatch({ type: SET_LOADING, payload: true });
-        const response = await axios.get(`${API_URL}`);
+        const response = await axios.get(`${API_URL_ARTICLES}`);
         dispatch({ type: FETCH_ARTICLES, payload: response.data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
@@ -66,6 +70,21 @@ export const fetchArticle = (id) => async (dispatch) => {
         dispatch({ type: FETCH_ARTICLE, payload: response.data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
+    } finally {
+        dispatch({ type: SET_LOADING, payload: false });
+    }
+};
+
+
+// Actions domain
+export const fetchDomains = () => async (dispatch) => {
+    try {
+        dispatch({ type: SET_LOADING, payload: true });
+        const response = await axios.get(`${API_URL_DOMAINS}`);
+        dispatch({ type: FETCH_DOMAINS, payload: response.data });
+    } catch (error) {
+        dispatch({ type: SET_ERROR, payload: error.message });
+        console.log(error.message);
     } finally {
         dispatch({ type: SET_LOADING, payload: false });
     }

@@ -4,9 +4,11 @@ import {thunk} from 'redux-thunk';  // pour gérer les actions asynchrones (API 
 
 // Importer tes réducteurs
 import articlesReducer from './reducers/articleReducer';
+import domainReducer from "./reducers/domainReducer";
 
 const rootReducer = combineReducers({
-  articles: articlesReducer
+  articles: articlesReducer,
+  domains : domainReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

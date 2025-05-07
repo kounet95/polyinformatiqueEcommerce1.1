@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/events")
 @RequiredArgsConstructor
+@CrossOrigin
 public class EventQueryController {
 
     private final QueryGateway queryGateway;

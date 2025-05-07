@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/news")
 @RequiredArgsConstructor
+@CrossOrigin
 public class NewsQueryController {
 
     private final QueryGateway queryGateway;

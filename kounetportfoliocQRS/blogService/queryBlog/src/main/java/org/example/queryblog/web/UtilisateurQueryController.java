@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/utilisateurs")
 @RequiredArgsConstructor
+@CrossOrigin
 public class UtilisateurQueryController {
 
     private final QueryGateway queryGateway;

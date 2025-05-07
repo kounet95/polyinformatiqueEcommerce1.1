@@ -51,12 +51,12 @@ const BlogPage = () => {
                                     <div className="post-meta">
                                         <p className="post-author">{article.author}</p>
                                         <p className="post-date">
-                                            <time datetime="2022-01-01">{article.createdAt}</time>
+                                            <time dateTime="2022-01-01">{article.createdAt}</time>
                                         </p>
                                     </div>
-                                    <a><span className='text-info '><i class="fa-solid fa-user-pen"></i></span></a>
-                                    <a><span className='text-danger '><i class="fa-solid fa-trash"></i></span></a>
-                                    <i class="fa-solid fa-comments">10</i>
+                                    <a><span className='text-info '><i className="fa-solid fa-user-pen"></i></span></a>
+                                    <a><span className='text-danger '><i className="fa-solid fa-trash"></i></span></a>
+                                    <i className="fa-solid fa-comments">10</i>
                             </div>
                         </article>
                     </div>

@@ -13,6 +13,8 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/tags")
 @RequiredArgsConstructor
+@CrossOrigin
+
 public class TagQueryController {
 
     private final QueryGateway queryGateway;
