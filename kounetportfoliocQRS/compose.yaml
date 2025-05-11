@@ -216,7 +216,7 @@ services:
     networks:
       - polyinfDb-net
   front:
-    build: ./
+    build: ./frontend
     image: front
     container_name: front
     ports:
