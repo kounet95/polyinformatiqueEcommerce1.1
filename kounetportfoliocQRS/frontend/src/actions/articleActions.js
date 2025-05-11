@@ -1,10 +1,14 @@
 // actions/articlesActions.js
-import axios from 'axios';
-
-// URL de l'API
-//const API_URL = 'http://localhost:8888/BLOGSERVICE/api/blog/articles';
-const API_URL_ARTICLES = 'http://localhost:8082/query/article/articles';
-const API_URL_DOMAINS = 'http://localhost:8082/domains';
+import { 
+  getAllArticles, 
+  getArticleById, 
+  getAllDomains 
+} from '../api/blog/query';
+import { 
+  createArticle as apiCreateArticle, 
+  updateArticle as apiUpdateArticle, 
+  deleteArticle as apiDeleteArticle 
+} from '../api/blog/command';
 
 
 
@@ -24,8 +28,8 @@ export const SET_ERROR = 'SET_ERROR';
 export const fetchArticles = () => async (dispatch) => {
     try {
         dispatch({ type: SET_LOADING, payload: true });
-        const response = await axios.get(`${API_URL_ARTICLES}`);
-        dispatch({ type: FETCH_ARTICLES, payload: response.data });
+        const data = await getAllArticles();
+        dispatch({ type: FETCH_ARTICLES, payload: data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
         console.log(error.message);
@@ -36,8 +40,8 @@ export const fetchArticles = () => async (dispatch) => {
 
 export const createArticle = (articleData) => async (dispatch) => {
     try {
-        const response = await axios.post(`${API_URL}/add`, articleData);
-        dispatch({ type: CREATE_ARTICLE, payload: response.data });
+        const data = await apiCreateArticle(articleData);
+        dispatch({ type: CREATE_ARTICLE, payload: data });
     } catch (error) {
         console.log(error.message);
         dispatch({ type: SET_ERROR, payload: error.message });
@@ -46,8 +50,8 @@ export const createArticle = (articleData) => async (dispatch) => {
 
 export const updateArticle = (id, articleData) => async (dispatch) => {
     try {
-        const response = await axios.put(`${API_URL}/${id}`, articleData);
-        dispatch({ type: UPDATE_ARTICLE, payload: response.data });
+        const data = await apiUpdateArticle(id, articleData);
+        dispatch({ type: UPDATE_ARTICLE, payload: data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
     }
@@ -55,7 +59,7 @@ export const updateArticle = (id, articleData) => async (dispatch) => {
 
 export const deleteArticle = (id) => async (dispatch) => {
     try {
-        await axios.delete(`${API_URL}/${id}`);
+        await apiDeleteArticle(id);
         dispatch({ type: DELETE_ARTICLE, payload: id });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
@@ -66,8 +70,8 @@ export const fetchArticle = (id) => async (dispatch) => {
     dispatch({ type: SET_LOADING, payload: true });
 
     try {
-        const response = await axios.get(`${API_URL}/${id}`);
-        dispatch({ type: FETCH_ARTICLE, payload: response.data });
+        const data = await getArticleById(id);
+        dispatch({ type: FETCH_ARTICLE, payload: data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
     } finally {
@@ -80,8 +84,8 @@ export const fetchArticle = (id) => async (dispatch) => {
 export const fetchDomains = () => async (dispatch) => {
     try {
         dispatch({ type: SET_LOADING, payload: true });
-        const response = await axios.get(`${API_URL_DOMAINS}`);
-        dispatch({ type: FETCH_DOMAINS, payload: response.data });
+        const data = await getAllDomains();
+        dispatch({ type: FETCH_DOMAINS, payload: data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });
         console.log(error.message);
