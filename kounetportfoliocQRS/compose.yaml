@@ -215,7 +215,12 @@ services:
         condition: service_healthy
     networks:
       - polyinfDb-net
-
+  front:
+    build: ./
+    image: front
+    container_name: front
+    ports:
+      - '82:80'
 volumes:
   polyinfDb_data:
   axonserver_data:
