@@ -5,8 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.axonframework.queryhandling.QueryHandler;
 import org.example.ecpolyquery.entity.Product;
 import org.example.ecpolyquery.query.GetAllProductsQuery;
+import org.example.ecpolyquery.query.GetPagedProductsQuery;
 import org.example.ecpolyquery.query.GetProductByIdQuery;
 import org.example.ecpolyquery.repos.ProductRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +27,13 @@ public class ProductQueryHandler {
     public List<Product> on(GetAllProductsQuery query) {
         log.debug("Handling GetAllProductsQuery");
         return productRepository.findAll();
+    }
+
+    @QueryHandler
+    public Page<Product> on(GetPagedProductsQuery query) {
+        log.debug("Handling GetPagedProductsQuery: page={}, size={}", query.getPage(), query.getSize());
+        Pageable pageable = PageRequest.of(query.getPage(), query.getSize());
+        return productRepository.findAll(pageable);
     }
 
     @QueryHandler
