@@ -31,8 +31,8 @@ const BlogDetailsPage = () => {
             <nav className="breadcrumbs">
             <div className="container">
                 <ol>
-                <li><a href="/">Home</a></li>
-                <li className="current">Blog Details</li>
+                  <li><a href="/">Accueil</a></li>
+                <li className="current">Article detaillee</li>
                 </ol>
             </div>
             </nav>

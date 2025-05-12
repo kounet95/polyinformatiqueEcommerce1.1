@@ -9,8 +9,8 @@ const TeamPage = () => {
                 <nav className="breadcrumbs">
                     <div className="container">
                         <ol>
-                        <li><a href="/">Home</a></li>
-                        <li className="current">Equipe</li>
+                          <li><a href="/">Accueil</a></li>
+                          <li className="current">Equipe</li>
                         </ol>
                     </div>
                 </nav>

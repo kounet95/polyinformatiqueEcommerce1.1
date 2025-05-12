@@ -9,7 +9,7 @@ const ServicePage = () => {
                 <nav className="breadcrumbs">
                     <div className="container">
                         <ol>
-                        <li><a href="/">Home</a></li>
+                            <li><a href="/">Accueil</a></li>
                         <li className="current">Services</li>
                         </ol>
                     </div>

@@ -8,8 +8,8 @@ const ForgotPasswordPage = () => {
     <nav className="breadcrumbs">
             <div className="container">
                 <ol>
-                <li><a href="/">Home</a></li>
-                <li className="current">Password forgotten</li>
+                    <li><a href="/">Accueil</a></li>
+                <li className="current">Recuperer le mot de passe</li>
                 </ol>
             </div>
         </nav>

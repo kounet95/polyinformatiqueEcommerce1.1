@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 @RestController
-@RequestMapping("/category/command")
+@RequestMapping("/domains/command")
 @CrossOrigin
 public class CategoryController {
 

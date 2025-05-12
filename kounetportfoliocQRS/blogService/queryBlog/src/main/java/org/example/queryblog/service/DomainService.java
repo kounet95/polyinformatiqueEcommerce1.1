@@ -26,15 +26,9 @@ public class DomainService {
     public void on(DomainCreateEvent event) {
         log.debug("Handling DomainCreateEvent: {}", event.getId());
 
-        //recuperer mes articles du domain venant de levenement
-        List<String> articles = event.getDomainDTO().getArticles();
-        // Recuperer les articles qui correspondent à ces IDs dans la base
-        List<Article> articleslist = articleRepository.findAllById(articles);
-
-        Domain domain = Domain.builder()
-                .name(event.getDomainDTO().getName())
-                .articles(articleslist)
-                .build();
+        Domain domain = new Domain();
+        domain.setId(event.getId());
+        domain.setName(event.getDomainDTO().getName());
 
         domainRepository.save(domain);
     }

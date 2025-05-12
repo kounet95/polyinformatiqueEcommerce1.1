@@ -15,6 +15,8 @@ import BlogFormPage from "./pages/BlogFormPage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import DomainFormPage from "./pages/DomainFormPage";
+import DomainPage from "./pages/DomainPage";
 
 function App() {
     const routes = useRoutes([
@@ -26,6 +28,9 @@ function App() {
         { path: '/blog', element: <BlogPage /> },
         { path: '/blog/:id', element: <BlogDetailWithId /> },
         { path: '/blog/new', element: <BlogFormPage /> },
+        { path: '/domain/new', element: <DomainFormPage /> },
+        { path: '/domain', element: <DomainPage /> },
+
         { path: '/signin', element: <SignInPage /> },
         { path: '/signup', element: <SignUpPage /> },
         { path: '/forgotten', element: <ForgotPasswordPage /> },

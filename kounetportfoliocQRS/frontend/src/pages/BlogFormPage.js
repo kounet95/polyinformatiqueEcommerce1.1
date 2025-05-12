@@ -1,9 +1,10 @@
 // src/components/BlogFormPage.js
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {createArticle, fetchArticles, fetchDomains} from '../actions/articleActions';
+import {createArticle, fetchArticles} from '../actions/articleActions';
 
 import HeaderComponent from '../components/HeaderComponent';
+import {fetchDomains} from "../actions/domainActions";
 
 
 const BlogFormPage = () => {
@@ -45,7 +46,7 @@ const BlogFormPage = () => {
             <nav className="breadcrumbs">
                 <div className="container">
                     <ol>
-                    <li><a href="/">Home</a></li>
+                        <li><a href="/">Accueil</a></li>
                     <li><a href="/blog">Blog</a></li>
                     <li className="current">Nouvel article</li>
                     </ol>

@@ -10,7 +10,6 @@ const NavBarComponent = () => {
                 <li><a href="/services/new">New</a></li>
                 <li className="dropdown"><a href="#"><span>Deep Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
                     <li><a href="#">Deep Dropdown 2</a></li>
                     
                     </ul>
@@ -24,15 +23,21 @@ const NavBarComponent = () => {
 
             <li className="dropdown"><a href="/blog"><span>Blog</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                <li><a href="/blog/new">New</a></li>
-                <li className="dropdown"><a href="#"><span>Deep Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    
-                    </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
+                    <li className="dropdown"><a href="/blog"><span>Articles</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="/blog/new">nouveau</a></li>
+                        </ul>
+                    </li>
+                    <li className="dropdown"><a href="/domain"><span>Domaines</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="/domain/new">nouveau </a></li>
+                        </ul>
+                    </li>
+                    <li className="dropdown"><a href="/tag"><span>Tags</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <ul>
+                            <li><a href="/tag/new">nouveau </a></li>
+                        </ul>
+                    </li>
                 
                 </ul>
             </li>
