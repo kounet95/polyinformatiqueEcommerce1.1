@@ -3,12 +3,14 @@ import ContactPage from "./pages/ContactPage";
 import PricingPage from "./pages/PricingPage";
 import ServicePage from "./pages/ServicePage";
 import TeamPage from "./pages/TeamPage";
-import BlogPage from "./pages/BlogPage";
+import PortfolioPage from "./pages/PortfolioPage";
+import PortfolioDetailsPage from "./pages/PortfolioDetailsPage";
+import ServicesDetailsPage from "./pages/ServicesDetailsPage";
+
 import NavBarComponent from "./components/NavBarComponent";
+import FooterComponent from "./components/FooterComponent";
 
-
-
-import {BrowserRouter, useParams, useRoutes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
 import BlogFormPage from "./pages/BlogFormPage";
@@ -40,21 +42,4 @@ function App() {
     return routes;
 }
 
-const BlogDetailWithId = () => {
-    const { id } = useParams()
-    return (
-        <BlogDetailsPage id={id}/>
-    )
-}
-export default function Root() {
-    return (
-        <>
-            <NavBarComponent />
-            <BrowserRouter>
-                <main className="main">
-                    <App/>
-                </main>
-            </BrowserRouter>
-        </>
-);
-}
+export default App

@@ -15,12 +15,12 @@ import java.util.stream.Stream;
 @RestController
 @RequestMapping("/domains/command")
 @CrossOrigin
-public class CategoryController {
+public class DomainController {
 
     private final CommandGateway commandGateway;
     private final EventStore eventStore;
 
-    public CategoryController(CommandGateway commandGateway, EventStore eventStore) {
+    public DomainController(CommandGateway commandGateway, EventStore eventStore) {
         this.commandGateway = commandGateway;
         this.eventStore = eventStore;
     }
