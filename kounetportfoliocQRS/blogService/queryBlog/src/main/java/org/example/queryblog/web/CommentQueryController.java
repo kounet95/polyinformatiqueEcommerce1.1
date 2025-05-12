@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/comments")
 @RequiredArgsConstructor
+@CrossOrigin
 public class CommentQueryController {
 
     private final QueryGateway queryGateway;

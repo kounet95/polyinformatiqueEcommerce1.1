@@ -3,43 +3,85 @@ package org.example.ecpolyquery.query
 public class GetAllCategoriesQuery {
 }
 
+public class GetPagedCategoriesQuery(val page: Int, val size: Int) {
+}
+
 public class GetAllCustomersQuery {
+}
+
+public class GetPagedCustomersQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllInvoicesQuery {
 }
 
+public class GetPagedInvoicesQuery(val page: Int, val size: Int) {
+}
+
 public class GetAllOrdersQuery {
+}
+
+public class GetPagedOrdersQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllOrderLinesQuery {
 }
 
+public class GetPagedOrderLinesQuery(val page: Int, val size: Int) {
+}
+
 public class GetAllProductsQuery {
+}
+
+public class GetPagedProductsQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllProductSizesQuery {
 }
 
+public class GetPagedProductSizesQuery(val page: Int, val size: Int) {
+}
+
 public class GetAllPurchasesQuery {
+}
+
+public class GetPagedPurchasesQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllPurchaseItemsQuery {
 }
 
+public class GetPagedPurchaseItemsQuery(val page: Int, val size: Int) {
+}
+
 public class GetAllShippingsQuery {
+}
+
+public class GetPagedShippingsQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllSocialGroupsQuery {
 }
 
+public class GetPagedSocialGroupsQuery(val page: Int, val size: Int) {
+}
+
 public class GetAllStocksQuery {
+}
+
+public class GetPagedStocksQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllSubcategoriesQuery {
 }
 
+public class GetPagedSubcategoriesQuery(val page: Int, val size: Int) {
+}
+
 public class GetAllSuppliersQuery {
+}
+
+public class GetPagedSuppliersQuery(val page: Int, val size: Int) {
 }
 
 class GetCategoryByIdQuery(val id: String)

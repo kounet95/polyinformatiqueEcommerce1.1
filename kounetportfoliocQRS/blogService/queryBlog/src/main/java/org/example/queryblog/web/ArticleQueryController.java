@@ -8,10 +8,7 @@ import org.example.polyinformatiquecoreapi.dto.ArticleDTO;
 import org.example.queryblog.entite.Article;
 import org.example.queryblog.query.GetAllArticlesQuery;
 import org.example.queryblog.query.GetArticleByIdQuery;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -19,6 +16,7 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("query/article")
 @AllArgsConstructor
+@CrossOrigin
 public class ArticleQueryController {
     private final QueryGateway queryGateway;
 
