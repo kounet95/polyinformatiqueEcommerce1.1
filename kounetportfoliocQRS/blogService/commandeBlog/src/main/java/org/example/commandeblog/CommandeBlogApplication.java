@@ -25,11 +25,11 @@ public class CommandeBlogApplication {
         return args -> {
             System.out.println("Starting to create sample data...");
 
-            // Create Tags
+
             List<String> tagIds = new ArrayList<>();
-            String tagId1 = UUID.randomUUID().toString();
-            String tagId2 = UUID.randomUUID().toString();
-            String tagId3 = UUID.randomUUID().toString();
+            String tagId1 = "tag-1";
+            String tagId2 = "tag-2";
+            String tagId3 = "tag-3";
 
             tagIds.add(tagId1);
             tagIds.add(tagId2);
@@ -41,10 +41,10 @@ public class CommandeBlogApplication {
 
             System.out.println("Tags created successfully");
 
-            // Create Domains (Categories)
+
             List<String> domainIds = new ArrayList<>();
-            String domainId1 = UUID.randomUUID().toString();
-            String domainId2 = UUID.randomUUID().toString();
+            String domainId1 = "domain-1";
+            String domainId2 = "domain-2";
 
             domainIds.add(domainId1);
             domainIds.add(domainId2);
@@ -54,10 +54,10 @@ public class CommandeBlogApplication {
 
             System.out.println("Domains created successfully");
 
-            // Create Authors
+
             List<String> authorIds = new ArrayList<>();
-            String authorId1 = UUID.randomUUID().toString();
-            String authorId2 = UUID.randomUUID().toString();
+            String authorId1 = "author-1";
+            String authorId2 = "author-2";
 
             authorIds.add(authorId1);
             authorIds.add(authorId2);
@@ -86,9 +86,9 @@ public class CommandeBlogApplication {
 
             System.out.println("Authors created successfully");
 
-            // Create Articles
-            String articleId1 = UUID.randomUUID().toString();
-            String articleId2 = UUID.randomUUID().toString();
+
+            String articleId1 = "article-1";
+            String articleId2 = "article-2";
 
             List<String> articleTagIds1 = new ArrayList<>();
             articleTagIds1.add(tagId1);
@@ -124,8 +124,8 @@ public class CommandeBlogApplication {
 
             System.out.println("Articles created successfully");
 
-            // Create News
-            String newsId1 = UUID.randomUUID().toString();
+
+            String newsId1 = "news-1";
 
             List<String> newsTagIds = new ArrayList<>();
             newsTagIds.add(tagId1);
@@ -145,8 +145,8 @@ public class CommandeBlogApplication {
 
             System.out.println("News created successfully");
 
-            // Create Events
-            String eventId1 = UUID.randomUUID().toString();
+
+            String eventId1 = "event-1";
 
             List<String> eventTagIds = new ArrayList<>();
             eventTagIds.add(tagId3);
@@ -168,9 +168,9 @@ public class CommandeBlogApplication {
 
             System.out.println("Events created successfully");
 
-            // Create Comments
-            String commentId1 = UUID.randomUUID().toString();
-            String commentId2 = UUID.randomUUID().toString();
+
+            String commentId1 = "comment-1";
+            String commentId2 = "comment-2";
 
             commandGateway.send(new AddCommentCommand(commentId1, new CommentDTO(
                     commentId1,
