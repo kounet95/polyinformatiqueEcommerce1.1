@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderComponent from '../components/HeaderComponent'
-import SocialSectionComponent from '../components/SocialSectionComponent'
+import HeaderComponent from '../components/website/HeaderComponent'
+import SocialSectionComponent from '../components/website/SocialSectionComponent'
 
 const SignInPage = () => {
   return (

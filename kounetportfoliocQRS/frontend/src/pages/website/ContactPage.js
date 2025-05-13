@@ -1,6 +1,7 @@
 import React from 'react';
-import CommentFormComponent from '../../components/CommentFormComponent';
-import HeaderComponent from '../../components/HeaderComponent';
+import CommentFormComponent from '../../components/website/CommentFormComponent';
+import HeaderComponent from '../../components/website/HeaderComponent';
+import ContactFormComponent from "../../components/lecontinent/ContactFormComponent";
 
 const ContactPage = () => {
     return (
@@ -17,7 +18,7 @@ const ContactPage = () => {
                 </nav>
             </div>
 
-            <CommentFormComponent />
+            <ContactFormComponent />
         </>
     );
 };

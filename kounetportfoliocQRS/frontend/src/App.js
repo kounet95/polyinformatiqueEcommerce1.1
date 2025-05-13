@@ -1,3 +1,5 @@
+import {BrowserRouter, Route, Routes, useRoutes} from "react-router-dom";
+import React from "react";
 import HomePage from "./pages/website/HomePage";
 import ContactPage from "./pages/website/ContactPage";
 import PricingPage from "./pages/website/PricingPage";
@@ -5,8 +7,7 @@ import ServicePage from "./pages/website/ServicePage";
 import TeamPage from "./pages/website/TeamPage";
 
 
-import {BrowserRouter, Route, Routes, useRoutes} from "react-router-dom";
-import React from "react";
+
 import BlogDetailsPage from "./pages/website/BlogDetailsPage";
 import BlogFormPage from "./pages/website/BlogFormPage";
 import SignInPage from "./pages/SignInPage";
@@ -15,6 +16,9 @@ import ForgotPasswordPage from "./pages/website/ForgotPasswordPage";
 import DomainFormPage from "./pages/website/DomainFormPage";
 import DomainPage from "./pages/website/DomainPage";
 import BlogPage from "./pages/website/BlogPage";
+import SignInSignUpPage from "./pages/SignInSignUpPage";
+import CartPage from "./pages/lecontinent/CartPage";
+import DetailPage from "./pages/lecontinent/DetailPage";
 
 function App() {
     const routes = useRoutes([
@@ -28,10 +32,11 @@ function App() {
         { path: '/blog/new', element: <BlogFormPage /> },
         { path: '/domain/new', element: <DomainFormPage /> },
         { path: '/domain', element: <DomainPage /> },
-        { path: '/lecontinent', element: <PricingPage /> },
+        { path: '/cart', element: <CartPage /> },
+        { path: '/lecontinent', element: <DetailPage /> },
 
-        { path: '/signin', element: <SignInPage /> },
-        { path: '/signup', element: <SignUpPage /> },
+        { path: '/sign', element: <SignInSignUpPage /> },
+
         { path: '/forgotten', element: <ForgotPasswordPage /> },
 
     ]);

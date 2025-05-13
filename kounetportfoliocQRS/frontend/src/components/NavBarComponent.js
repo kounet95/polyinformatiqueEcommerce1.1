@@ -19,7 +19,7 @@ const NavBarComponent = () => {
             </li>  
             <li><Link to="/portfolio">Portfolio</Link></li>
             <li><Link to="/pricing">Pricing</Link></li>
-                <li><Link to="/lecontinent">lecontinent</Link></li>
+                <li><Link to="/lecontinent">boutiques</Link></li>
 
                 <li><Link to="/team">Team</Link></li>
 
@@ -44,12 +44,9 @@ const NavBarComponent = () => {
                 </ul>
             </li>
             <li><Link to="/contact">Contact</Link></li>
-            <li className="dropdown"><span>Sign in</span> <i className="bi bi-chevron-down toggle-dropdown"></i>
-                <ul>
-                <li><Link to="/signin">Sign in</Link></li>
-                <li><Link to="/signup">Sign up</Link></li>            
-                </ul>
-            </li>  
+            <li ><Link to="/sign">Sign in / Sign up</Link></li>
+                <li ><Link to="/event">Evenements</Link></li>
+
             </ul>
             <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

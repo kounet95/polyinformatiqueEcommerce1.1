@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticles } from '../../actions/articleActions';
-import HeaderComponent from '../../components/HeaderComponent';
-import PaginatorComponent from '../../components/PaginatorComponent';
+import HeaderComponent from '../../components/website/HeaderComponent';
+import PaginatorComponent from '../../components/website/PaginatorComponent';
 
 const BlogPage = () => {
     const dispatch = useDispatch();

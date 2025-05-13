@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticle } from '../../actions/articleActions';
 import { useParams } from 'react-router-dom';
-import CommentFormComponent from '../../components/CommentFormComponent';
-import HeaderComponent from '../../components/HeaderComponent';
+import CommentFormComponent from '../../components/website/CommentFormComponent';
+import HeaderComponent from '../../components/website/HeaderComponent';
 
 
 const BlogDetailsPage = () => {

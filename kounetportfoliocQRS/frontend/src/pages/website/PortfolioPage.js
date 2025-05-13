@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioComponent from '../../components/PortfolioComponent';
+import PortfolioComponent from '../../components/website/PortfolioComponent';
 
 const PortfolioPage = () => {
   return (

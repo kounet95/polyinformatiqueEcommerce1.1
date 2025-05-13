@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderComponent from '../../components/HeaderComponent'
+import HeaderComponent from '../../components/website/HeaderComponent'
 
 const ForgotPasswordPage = () => {
   return (

@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {createDomain} from '../../actions/domainActions';
 
-import HeaderComponent from '../../components/HeaderComponent';
+import HeaderComponent from '../../components/website/HeaderComponent';
 
 
 const DomainFormPage = () => {

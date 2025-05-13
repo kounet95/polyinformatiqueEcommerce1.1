@@ -1,5 +1,5 @@
 import React from 'react';
-import ServicesDetailsComponent from '../../components/ServicesDetailsComponent';
+import ServicesDetailsComponent from '../../components/website/ServicesDetailsComponent';
 
 const ServicesDetailsPage = () => {
   return (
