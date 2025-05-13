@@ -7,6 +7,7 @@ const API_URL_QUERY_DOMAIN = 'http://localhost:8082/domains';
 
 export const FETCH_DOMAINS = 'FETCH_DOMAINS';
 export const CREATE_DOMAIN = 'CREATE_DOMAIN';
+export const UPDATE_DOMAIN = 'UPDATE_DOMAIN';
 
 
 
@@ -39,7 +40,7 @@ export const createDomain = (domainData) => async (dispatch) => {
 
 export const updateDomain = (id, data) => async (dispatch) => {
     try {
-        const response = await axios.put(`${API_URL_ARTICLES}/${id}`, data);
+        const response = await axios.put(`${API_URL_DOMAINS}/${id}`, data);
         dispatch({ type: UPDATE_DOMAIN, payload: response.data });
     } catch (error) {
         dispatch({ type: SET_ERROR, payload: error.message });

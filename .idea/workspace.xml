@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3521d88-29ef-418d-a758-db61716593db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/kounetportfoliocQRS/reset-hard-clean.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/polyinformatiqueEcommerce1.1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/blogService/commandeBlog/src/main/java/org/example/commandeblog/aggreate/MediaAggregate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/blogService/commandeBlog/src/main/java/org/example/commandeblog/web/DomainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kounetportfoliocQRS/blogService/commandeBlog/src/main/java/org/example/commandeblog/web/DomainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/blogService/queryBlog/src/main/java/org/example/queryblog/config/SpringDocConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/main/java/org/example/ecpolycommand/aggregate/OrderAggregate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/main/java/org/example/ecpolycommand/aggregate/PurchaseAggregate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/main/java/org/example/ecpolycommand/aggregate/StockAggregate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/main/java/org/example/ecpolycommand/config/AxonConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/main/java/org/example/ecpolycommand/web/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/main/java/org/example/ecpolycommand/web/Purchase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/main/java/org/example/ecpolycommand/web/Stock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyCommand/src/test/java/org/example/ecpolycommand/EcPolyCommandApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/src/main/java/org/example/ecpolyquery/EcPolyQueryApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/src/main/java/org/example/ecpolyquery/config/AxonConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/ecPolyQuery/src/test/java/org/example/ecpolyquery/EcPolyQueryApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/src/main/java/org/example/ecommercepolyinformatique/EcommercePolyinformatiqueApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/ecommercePolyinformatique/src/test/java/org/example/ecommercepolyinformatique/EcommercePolyinformatiqueApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/AddProductToOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/AddStockCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/BaseCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/ConfirmOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/CreateOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/DeliverOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/GenerateInvoiceCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/PayInvoiceCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/ReceivePurchaseCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/commandEcommerce/StartShippingCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/CategoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/CustomerDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/InvoiceDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/OrderDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/OrderLineDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/ProductDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/ProductSizeDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/PurchaseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/PurchaseItemDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/ShippingDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/SocialGroupDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/StockDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/SubcategoryDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/dtoEcommerce/SupplierDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/InvoiceGeneratedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/InvoicePaidEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/OrderConfirmedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/OrderCreatedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/OrderDeliveredEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/ProductAddedToOrderEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/PurchaseReceivedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/ShippingStartedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/StockDecreasedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/polyinformatique-core-API/src/main/java/org/example/polyinformatiquecoreapi/eventEcommerce/StockIncreasedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kounetportfoliocQRS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/kounetportfoliocQRS/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;arseneRuben&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:kounet95/polyinformatiqueEcommerce1.1.git&quot;,
+    &quot;accountId&quot;: &quot;8c46ce37-21cb-4ea9-a0ed-225a933a1da6&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2w6hHtQ0IgbU2dH7wNdc2dSYN6t" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.kounetportfoliocQRS/compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CommandeBlogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GetwayserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.QueryBlogApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging articles&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/polyinformatiqueEcommerce1.1/kounetportfoliocQRS/frontend/src/reducers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\polyinformatiqueEcommerce1.1\kounetportfoliocQRS\frontend\src\reducers" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.kounetportfoliocQRS/compose.yaml: Compose Deployment">
+    <configuration name="CommandeBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="commandeBlog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.commandeblog.CommandeBlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="configservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kounettechnologie.kounet.configservice.ConfigserviceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kounettechnologie.kounet.configservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discoveryservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kounettechnologie.kounet.discoveryservice.DiscoveryserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EcPolyCommandApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="ecPolyCommand" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.ecpolycommand.EcPolyCommandApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EcPolyQueryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="ecPolyQuery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.ecpolyquery.EcPolyQueryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetwayserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="getwayservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kounettechnologie.kounet.getwayservice.GetwayserviceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kounettechnologie.kounet.getwayservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="queryBlog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.queryblog.QueryBlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="kounetportfoliocQRS/compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="kounetportfoliocQRS/compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.GetwayserviceApplication" />
+        <item itemvalue="Docker.kounetportfoliocQRS/compose.yaml: Compose Deployment" />
+        <item itemvalue="Spring Boot.ConfigserviceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3521d88-29ef-418d-a758-db61716593db" name="Changes" comment="" />
+      <created>1745367847821</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745367847821</updated>
+      <workItem from="1745367849922" duration="808000" />
+      <workItem from="1745430235043" duration="23623000" />
+      <workItem from="1746479025311" duration="48509000" />
+      <workItem from="1747090880443" duration="21000" />
+      <workItem from="1747090950230" duration="22000" />
+      <workItem from="1747091002113" duration="34000" />
+      <workItem from="1747091091093" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

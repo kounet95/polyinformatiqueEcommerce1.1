@@ -19,7 +19,9 @@ const NavBarComponent = () => {
             </li>  
             <li><Link to="/portfolio">Portfolio</Link></li>
             <li><Link to="/pricing">Pricing</Link></li>
-            <li><Link to="/team">Team</Link></li>
+                <li><Link to="/lecontinent">lecontinent</Link></li>
+
+                <li><Link to="/team">Team</Link></li>
 
             <li className="dropdown"><Link to="/blog"><span>Blog</span> <i className="bi bi-chevron-down toggle-dropdown"></i></Link>
                 <ul>

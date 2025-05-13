@@ -1,24 +1,20 @@
-import HomePage from "./pages/HomePage";
-import ContactPage from "./pages/ContactPage";
-import PricingPage from "./pages/PricingPage";
-import ServicePage from "./pages/ServicePage";
-import TeamPage from "./pages/TeamPage";
-import PortfolioPage from "./pages/PortfolioPage";
-import PortfolioDetailsPage from "./pages/PortfolioDetailsPage";
-import ServicesDetailsPage from "./pages/ServicesDetailsPage";
+import HomePage from "./pages/website/HomePage";
+import ContactPage from "./pages/website/ContactPage";
+import PricingPage from "./pages/website/PricingPage";
+import ServicePage from "./pages/website/ServicePage";
+import TeamPage from "./pages/website/TeamPage";
 
-import NavBarComponent from "./components/NavBarComponent";
-import FooterComponent from "./components/FooterComponent";
 
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useRoutes} from "react-router-dom";
 import React from "react";
-import BlogDetailsPage from "./pages/BlogDetailsPage";
-import BlogFormPage from "./pages/BlogFormPage";
+import BlogDetailsPage from "./pages/website/BlogDetailsPage";
+import BlogFormPage from "./pages/website/BlogFormPage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import DomainFormPage from "./pages/DomainFormPage";
-import DomainPage from "./pages/DomainPage";
+import ForgotPasswordPage from "./pages/website/ForgotPasswordPage";
+import DomainFormPage from "./pages/website/DomainFormPage";
+import DomainPage from "./pages/website/DomainPage";
+import BlogPage from "./pages/website/BlogPage";
 
 function App() {
     const routes = useRoutes([
@@ -28,10 +24,11 @@ function App() {
         { path: '/services', element: <ServicePage /> },
         { path: '/team', element: <TeamPage /> },
         { path: '/blog', element: <BlogPage /> },
-        { path: '/blog/:id', element: <BlogDetailWithId /> },
+        { path: '/blog/:id', element: <BlogDetailsPage /> },
         { path: '/blog/new', element: <BlogFormPage /> },
         { path: '/domain/new', element: <DomainFormPage /> },
         { path: '/domain', element: <DomainPage /> },
+        { path: '/lecontinent', element: <PricingPage /> },
 
         { path: '/signin', element: <SignInPage /> },
         { path: '/signup', element: <SignUpPage /> },
