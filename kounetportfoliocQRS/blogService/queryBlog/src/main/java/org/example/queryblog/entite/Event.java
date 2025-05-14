@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
+import com.example.polyinformatiquecommon.blog.Item;
 
 import java.security.Timestamp;
 import java.time.LocalDateTime;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Entity
+@Entity(name = "blog_event")
 @Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @SuperBuilder
 @DiscriminatorValue("Event")
 public class Event extends Item{

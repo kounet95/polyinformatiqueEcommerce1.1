@@ -3,9 +3,9 @@ package org.example.ecpolyquery.web;
 import lombok.AllArgsConstructor;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
-import org.example.ecpolyquery.entity.Customer;
 import org.example.ecpolyquery.query.GetAllCustomersQuery;
 import org.example.ecpolyquery.query.GetCustomerByIdQuery;
+import com.example.polyinformatiquecommon.Customer;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

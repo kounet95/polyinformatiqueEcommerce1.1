@@ -1,0 +1,42 @@
+package org.example.ecpolycommand.aggregate;
+
+import org.axonframework.commandhandling.CommandHandler;
+import org.axonframework.eventsourcing.EventSourcingHandler;
+import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.spring.stereotype.Aggregate;
+import org.example.polyinformatiquecoreapi.commandEcommerce.CreateOrderLineCommand;
+import org.example.polyinformatiquecoreapi.dtoEcommerce.OrderLineDTO;
+import org.example.polyinformatiquecoreapi.eventEcommerce.OrderLineCreatedEvent;
+
+import static org.axonframework.modelling.command.AggregateLifecycle.apply;
+
+
+/**
+ * OrderLine Aggregate for handling order line-related commands
+ */
+@Aggregate
+public class OrderLineAggregate {
+
+    @AggregateIdentifier
+    private String orderLineId;
+    private String orderId;
+    private String productSizeId;
+    private int qty;
+
+    public OrderLineAggregate() {}
+
+
+     @CommandHandler
+     public OrderLineAggregate(CreateOrderLineCommand cmd) {
+         apply(new OrderLineCreatedEvent(cmd.getId(), cmd.getOrderLineDTO()));
+     }
+
+
+     @EventSourcingHandler
+     public void on(OrderLineCreatedEvent event) {
+         this.orderLineId = event.getId();
+         this.orderId = event.getOrderLineDTO().getOrderId();
+         this.productSizeId = event.getOrderLineDTO().getProductSizeId();
+         this.qty = event.getOrderLineDTO().getQty();
+     }
+}

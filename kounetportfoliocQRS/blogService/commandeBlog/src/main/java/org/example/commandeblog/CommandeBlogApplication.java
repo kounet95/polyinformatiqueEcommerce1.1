@@ -20,11 +20,8 @@ public class CommandeBlogApplication {
         SpringApplication.run(CommandeBlogApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(CommandGateway commandGateway) {
-        return args -> {
-            System.out.println("Starting to create sample data...");
 
+<<<<<<< Updated upstream
             // Create Tags
             List<String> tagIds = new ArrayList<>();
             String tagId1 = UUID.randomUUID().toString();
@@ -192,4 +189,6 @@ public class CommandeBlogApplication {
             System.out.println("All sample data created successfully!");
         };
     }
+=======
+>>>>>>> Stashed changes
 }

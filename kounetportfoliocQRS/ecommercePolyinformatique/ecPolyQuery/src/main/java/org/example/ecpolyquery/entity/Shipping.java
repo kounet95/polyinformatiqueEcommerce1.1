@@ -6,7 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "eco_shopping_purchase")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -25,6 +25,5 @@ public class Shipping {
 
     @OneToOne
     @JoinColumn(name = "order_id")
-    private Order order;
+    private Orderecommerce orderecommerce;
 }
-

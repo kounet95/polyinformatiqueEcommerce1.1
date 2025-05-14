@@ -9,7 +9,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
 
-@Entity
+@Entity(name = "eco_social_group")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

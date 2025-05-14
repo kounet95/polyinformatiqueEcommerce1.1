@@ -3,6 +3,7 @@ package org.example.commandeblog.web;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.example.polyinformatiquecoreapi.commands.CreateTagCommand;
+import org.example.polyinformatiquecoreapi.commands.DeleteTagCommand;
 import org.example.polyinformatiquecoreapi.dto.TagDTO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
@@ -38,5 +39,10 @@ public class TagController {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handle(Exception ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public CompletableFuture<String> deleteTag(@PathVariable String id) {
+        return commandGateway.send(new DeleteTagCommand(id));
     }
 }

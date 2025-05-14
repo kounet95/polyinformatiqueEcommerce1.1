@@ -2,7 +2,8 @@ package org.example.commandeblog.web;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
-import org.example.polyinformatiquecoreapi.commands.CreateCategoryCommand;
+import org.example.polyinformatiquecoreapi.commands.CreateDomainCommand;
+import org.example.polyinformatiquecoreapi.commands.DeleteCategoryCommand;
 import org.example.polyinformatiquecoreapi.dto.DomainDTO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,7 @@ public class DomainController {
 
     @PostMapping("/create")
     public CompletableFuture<String> create(@RequestBody DomainDTO dto) {
-        return commandGateway.send(new CreateCategoryCommand(
+        return commandGateway.send(new CreateDomainCommand(
                 UUID.randomUUID().toString(), dto));
     }
 
@@ -39,5 +40,10 @@ public class DomainController {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handle(Exception ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public CompletableFuture<String> deleteCategory(@PathVariable String id) {
+        return commandGateway.send(new DeleteCategoryCommand(id));
     }
 }

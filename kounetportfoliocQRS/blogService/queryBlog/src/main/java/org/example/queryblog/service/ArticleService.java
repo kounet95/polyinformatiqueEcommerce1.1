@@ -3,8 +3,12 @@ package org.example.queryblog.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
+import com.example.polyinformatiquecommon.Customer;
+import com.example.polyinformatiquecommon.blog.Comment;
+import com.example.polyinformatiquecommon.blog.Tag;
 import org.example.polyinformatiquecoreapi.event.*;
-import org.example.queryblog.entite.*;
+import org.example.queryblog.entite.Article;
+import org.example.queryblog.entite.Domain;
 import org.example.queryblog.repos.*;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +33,7 @@ public class ArticleService {
         Domain domain = domainRepository.findById(event.getArticleDTO().getDomainId())
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
 
-        Utilisateurs utilisateur = utilisateurRepository.findById(event.getArticleDTO().getAuthorId())
+        Customer utilisateur = utilisateurRepository.findById(event.getArticleDTO().getAuthorId())
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 
         List<Comment> commentaires = commentRepository.findAllById(event.getArticleDTO().getCommentIds());

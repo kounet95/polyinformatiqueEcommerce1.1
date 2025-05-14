@@ -3,6 +3,7 @@ package org.example.commandeblog.web;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.example.polyinformatiquecoreapi.commands.CreateMediaCommand;
+import org.example.polyinformatiquecoreapi.commands.DeleteMediaCommand;
 import org.example.polyinformatiquecoreapi.dto.MediaDTO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
@@ -38,5 +39,10 @@ public class MediaController {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handle(Exception ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public CompletableFuture<String> deleteMedia(@PathVariable String id) {
+        return commandGateway.send(new DeleteMediaCommand(id));
     }
 }

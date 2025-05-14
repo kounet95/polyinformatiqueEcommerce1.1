@@ -3,6 +3,7 @@ package org.example.ecpolyquery.web;
 import lombok.AllArgsConstructor;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
+import org.example.ecpolyquery.dto.PageResponse;
 import org.example.ecpolyquery.entity.Supplier;
 import org.example.ecpolyquery.query.GetAllSuppliersQuery;
 import org.example.ecpolyquery.query.GetSupplierByIdQuery;
@@ -19,9 +20,12 @@ public class SupplierController {
     private final QueryGateway queryGateway;
 
     @GetMapping
-    public CompletableFuture<List<Supplier>> getAllSuppliers() {
-        return queryGateway.query(new GetAllSuppliersQuery(), 
-                ResponseTypes.multipleInstancesOf(Supplier.class));
+    public CompletableFuture<PageResponse<Supplier>> getAllSuppliers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return queryGateway.query(new GetAllSuppliersQuery(page, size), 
+                ResponseTypes.instanceOf(PageResponse.class))
+                .thenApply(response -> (PageResponse<Supplier>) response);
     }
 
     @GetMapping("/{id}")

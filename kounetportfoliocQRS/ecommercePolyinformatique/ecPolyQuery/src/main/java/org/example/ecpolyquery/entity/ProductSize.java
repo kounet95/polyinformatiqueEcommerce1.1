@@ -6,7 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.util.List;
 
-@Entity
+@Entity(name = "eco_product_size")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

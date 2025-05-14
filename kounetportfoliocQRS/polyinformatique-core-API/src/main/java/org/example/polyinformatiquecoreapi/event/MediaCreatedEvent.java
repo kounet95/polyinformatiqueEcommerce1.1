@@ -16,9 +16,3 @@ public class MediaCreatedEvent extends BaseEvent<String> implements Serializable
         return payload;
     }
 }
-
-class MediaDeletedEvent extends BaseEvent<String> implements Serializable {
-    public MediaDeletedEvent(String id) {
-        super(id);
-    }
-}

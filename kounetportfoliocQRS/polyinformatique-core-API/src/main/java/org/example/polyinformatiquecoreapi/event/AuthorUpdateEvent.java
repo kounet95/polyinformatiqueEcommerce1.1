@@ -1,13 +1,13 @@
 package org.example.polyinformatiquecoreapi.event;
 
-import org.example.polyinformatiquecoreapi.dto.AuthorDTO;
+import org.example.polyinformatiquecoreapi.dto.CustomerBlogDTO;
 
 public class AuthorUpdateEvent {
 
     private final String id;
-    private final AuthorDTO author;
+    private final CustomerBlogDTO author;
 
-    public AuthorUpdateEvent(String id, AuthorDTO author) {
+    public AuthorUpdateEvent(String id, CustomerBlogDTO author) {
         this.id = id;
         this.author = author;
     }
@@ -16,7 +16,7 @@ public class AuthorUpdateEvent {
         return id;
     }
 
-    public AuthorDTO getAuthor() {
+    public CustomerBlogDTO getAuthor() {
         return author;
     }
 }

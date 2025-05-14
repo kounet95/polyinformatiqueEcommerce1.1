@@ -2,9 +2,12 @@ package org.example.queryblog.service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
+import org.axonframework.queryhandling.QueryUpdateEmitter;
 import org.example.polyinformatiquecoreapi.dto.TagDTO;
-import org.example.queryblog.entite.Tag;
+import org.example.polyinformatiquecoreapi.event.TagCreatedEvent;
+import com.example.polyinformatiquecommon.blog.Tag;
 import org.example.queryblog.mapper.TagMapper;
 import org.example.queryblog.query.GetAllTagQuery;
 import org.example.queryblog.query.GetTagByIdQuery;
@@ -22,6 +25,7 @@ public class TagQueryHandler {
 
     private final TagRepository tagRepository;
     private final TagMapper tagMapper;
+    private final QueryUpdateEmitter queryUpdateEmitter;
 
     @QueryHandler
     public List<TagDTO> on(GetAllTagQuery query) {
@@ -37,5 +41,17 @@ public class TagQueryHandler {
         return optionalTag
                 .map(tagMapper::toDTO)
                 .orElseThrow(() -> new RuntimeException("Tag not found with id: " + query.getId()));
+    }
+
+    @EventHandler
+    public void on(TagCreatedEvent event) {
+        log.debug("Handling TagCreatedEvent for subscription queries: {}", event.getId());
+        // The event already contains the TagDTO
+        TagDTO tagDTO = event.getPayload();
+
+        // If there were a WatchTagQuery, we would emit updates here
+        // queryUpdateEmitter.emit(WatchTagQuery.class,
+        //        query -> query.getTagId().equals(event.getId()),
+        //        tagDTO);
     }
 }

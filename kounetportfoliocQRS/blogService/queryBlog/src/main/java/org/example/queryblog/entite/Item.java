@@ -4,6 +4,8 @@ package org.example.queryblog.entite;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import com.example.polyinformatiquecommon.Customer;
+import com.example.polyinformatiquecommon.blog.Comment;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,7 +20,7 @@ import java.util.List;
 @Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", length = 10)
-@Entity
+@Entity(name = "blog_item")
 public abstract class Item {
     @Id
     @GeneratedValue(generator = "uuid")
@@ -31,7 +33,7 @@ public abstract class Item {
     private LocalDate createdAt;
 
     @ManyToOne
-    private Utilisateurs utilisateur;
+    private Customer utilisateur;
 
     @OneToMany
     private List<Media> mediaList;

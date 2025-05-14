@@ -27,11 +27,18 @@ public class GetPagedOrdersQuery(val page: Int, val size: Int) {
 public class GetAllOrderLinesQuery {
 }
 
+<<<<<<< Updated upstream
 public class GetPagedOrderLinesQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllProductsQuery {
 }
+=======
+public class GetAllProductsQuery(
+    var page: Int = 0,
+    var size: Int = 10
+)
+>>>>>>> Stashed changes
 
 public class GetPagedProductsQuery(val page: Int, val size: Int) {
 }
@@ -75,11 +82,18 @@ public class GetPagedStocksQuery(val page: Int, val size: Int) {
 public class GetAllSubcategoriesQuery {
 }
 
+<<<<<<< Updated upstream
 public class GetPagedSubcategoriesQuery(val page: Int, val size: Int) {
 }
 
 public class GetAllSuppliersQuery {
 }
+=======
+public class GetAllSuppliersQuery(
+    var page: Int = 0,
+    var size: Int = 10
+)
+>>>>>>> Stashed changes
 
 public class GetPagedSuppliersQuery(val page: Int, val size: Int) {
 }

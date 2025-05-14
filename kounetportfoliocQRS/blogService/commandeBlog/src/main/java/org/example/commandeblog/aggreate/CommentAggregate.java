@@ -38,7 +38,7 @@ public class CommentAggregate {
 
     @EventSourcingHandler
     public void on(CommentAddedEvent event) {
-        //log.info("Applying CommentAddedEvent for id: {}", event.getId());
+        log.info("Applying CommentAddedEvent for id: {}", event.getId());
         this.idComment = event.getId();
         this.contenu = event.getCommentDTO().getContenu();
         this.postId = event.getCommentDTO().getItemId();
@@ -57,7 +57,7 @@ public class CommentAggregate {
 
     @EventSourcingHandler
     public void on(CommentEditedEvent event) {
-        //log.info("Applying CommentEditedEvent for id: {}", event.getId());
+        log.info("Applying CommentEditedEvent for id: {}", event.getId());
         this.contenu = event.getNewContent();
 
     }
@@ -73,7 +73,7 @@ public class CommentAggregate {
 
     @EventSourcingHandler
     public void on(CommentDeletedEvent event) {
-        //log.info("Applying CommentDeletedEvent for id: {}", event.getCommentId());
+        log.info("Applying CommentDeletedEvent for id: {}", event.getCommentId());
         this.contenu = "[deleted]";
         this.authorId = null;
     }

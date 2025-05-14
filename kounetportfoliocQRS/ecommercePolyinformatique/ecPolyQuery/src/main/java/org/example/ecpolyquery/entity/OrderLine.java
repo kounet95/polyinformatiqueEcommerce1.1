@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+@Entity(name = "eco_orderline")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -20,10 +20,9 @@ public class OrderLine {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Order order;
+    private Orderecommerce orderecommerce;
 
     @ManyToOne
     @JoinColumn(name = "product_size_id")
     private ProductSize productSize;
 }
-

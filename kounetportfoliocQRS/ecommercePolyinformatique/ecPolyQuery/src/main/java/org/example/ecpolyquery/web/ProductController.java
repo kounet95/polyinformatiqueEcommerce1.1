@@ -3,6 +3,7 @@ package org.example.ecpolyquery.web;
 import lombok.AllArgsConstructor;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
+import org.example.ecpolyquery.dto.PageResponse;
 import org.example.ecpolyquery.entity.Product;
 import org.example.ecpolyquery.query.GetAllProductsQuery;
 import org.example.ecpolyquery.query.GetPagedProductsQuery;
@@ -21,9 +22,12 @@ public class ProductController {
     private final QueryGateway queryGateway;
 
     @GetMapping
-    public CompletableFuture<List<Product>> getAllProducts() {
-        return queryGateway.query(new GetAllProductsQuery(), 
-                ResponseTypes.multipleInstancesOf(Product.class));
+    public CompletableFuture<PageResponse<Product>> getAllProducts(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return queryGateway.query(new GetAllProductsQuery(page, size), 
+                ResponseTypes.instanceOf(PageResponse.class))
+                .thenApply(response -> (PageResponse<Product>) response);
     }
 
     @GetMapping("/paged")

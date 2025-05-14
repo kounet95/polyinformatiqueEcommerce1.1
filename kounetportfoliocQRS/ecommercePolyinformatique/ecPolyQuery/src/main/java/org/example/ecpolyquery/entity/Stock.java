@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+@Entity(name = "eco_stock")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

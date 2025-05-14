@@ -1,7 +1,7 @@
 package org.example.queryblog.mapper;
 
 import org.example.polyinformatiquecoreapi.dto.CommentDTO;
-import org.example.queryblog.entite.Comment;
+import com.example.polyinformatiquecommon.blog.Comment;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

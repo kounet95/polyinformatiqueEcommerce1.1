@@ -18,6 +18,7 @@ public class MediaDTO implements Serializable {
     private String url;
     private String fileName;
     private String fileType;
+    private String itemId;
 
     public String getId() {
         return id;
@@ -33,5 +34,8 @@ public class MediaDTO implements Serializable {
 
     public String getFileType() {
         return fileType;
+    }
+    public String getItemId() {
+        return itemId;
     }
 }

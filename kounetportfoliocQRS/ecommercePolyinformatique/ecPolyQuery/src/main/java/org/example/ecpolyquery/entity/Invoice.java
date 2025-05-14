@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+@Entity(name = "eco_invoice_category")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -20,6 +20,5 @@ public class Invoice {
 
     @OneToOne
     @JoinColumn(name = "order_id")
-    private Order order;
+    private Orderecommerce orderecommerce;
 }
-

@@ -1,9 +1,8 @@
 package org.example.queryblog.repos;
 
-import org.example.queryblog.entite.Article;
-import org.example.queryblog.entite.Utilisateurs;
+import com.example.polyinformatiquecommon.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UtilisateurRepos extends JpaRepository<Utilisateurs,String> {
+public interface UtilisateurRepos extends JpaRepository<Customer,String> {
 
 }

@@ -2,11 +2,12 @@ package org.example.queryblog.entite;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.example.polyinformatiquecommon.Customer;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDate;
 
-@Entity
+@Entity(name = "blogcomment")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -23,6 +24,6 @@ public class Comment  {
     private Item item;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "commentList")
-    private Utilisateurs utilisateur;
+    private Customer utilisateur;
     private String content;
 }

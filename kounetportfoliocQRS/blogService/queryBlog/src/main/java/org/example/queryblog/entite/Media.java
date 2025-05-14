@@ -5,7 +5,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+@Entity(name = "blog_media")
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder

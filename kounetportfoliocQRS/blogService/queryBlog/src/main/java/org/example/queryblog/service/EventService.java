@@ -3,10 +3,14 @@ package org.example.queryblog.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
+import com.example.polyinformatiquecommon.Customer;
+import com.example.polyinformatiquecommon.blog.Comment;
+import com.example.polyinformatiquecommon.blog.Tag;
 import org.example.polyinformatiquecoreapi.event.EventCreatedEvent;
 import org.example.polyinformatiquecoreapi.event.EventUpdatedEvent;
 import org.example.polyinformatiquecoreapi.event.ItemDeletedEvent;
-import org.example.queryblog.entite.*;
+import org.example.queryblog.entite.Domain;
+import org.example.queryblog.entite.Event;
 import org.example.queryblog.repos.*;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +35,7 @@ public class EventService {
         Domain domain = domainRepository.findById(event.getEventDTO().getDomainId())
                 .orElseThrow(() -> new RuntimeException("Domain not found"));
 
-        Utilisateurs utilisateur = utilisateurRepository.findById(event.getEventDTO().getAuthorId())
+        Customer utilisateur = utilisateurRepository.findById(event.getEventDTO().getAuthorId())
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
 
         // Recuperer les IDs de commentaires envoyes dans la commande

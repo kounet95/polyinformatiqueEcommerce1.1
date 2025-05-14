@@ -1,12 +1,13 @@
 package org.example.ecpolyquery.service;
 
+import com.example.polyinformatiquecommon.Customer;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.queryhandling.QueryHandler;
-import org.example.ecpolyquery.entity.Customer;
 import org.example.ecpolyquery.query.GetAllCustomersQuery;
 import org.example.ecpolyquery.query.GetCustomerByIdQuery;
 import org.example.ecpolyquery.repos.CustomerRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

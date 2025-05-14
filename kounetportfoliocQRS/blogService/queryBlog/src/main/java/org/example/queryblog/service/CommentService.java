@@ -4,17 +4,20 @@ package org.example.queryblog.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
+import com.example.polyinformatiquecommon.Customer;
+import com.example.polyinformatiquecommon.blog.Comment;
+import com.example.polyinformatiquecommon.blog.Item;
 import org.example.polyinformatiquecoreapi.event.CommentAddedEvent;
 import org.example.polyinformatiquecoreapi.event.CommentEditedEvent;
 import org.example.polyinformatiquecoreapi.event.CommentDeletedEvent;
 import org.example.polyinformatiquecoreapi.event.ItemDeletedEvent;
-import org.example.queryblog.entite.Comment;
-import org.example.queryblog.entite.Item;
-import org.example.queryblog.entite.Utilisateurs;
 import org.example.queryblog.repos.CommentRepository;
 import org.example.queryblog.repos.IteamRepository;
 import org.example.queryblog.repos.UtilisateurRepos;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Component
@@ -25,17 +28,16 @@ public class CommentService {
     private final UtilisateurRepos utilisateurRepos;
     private final IteamRepository teamRepo;
 
+
     @EventHandler
     public void on(CommentAddedEvent event) {
         log.debug("Handling CommentAddedEvent: {}", event.getId());
 
         // On récupère l'utilisateur par leur ID
-        Utilisateurs utilisateur = utilisateurRepos.findById(event.getCommentDTO().getAuthorId())
+        Customer utilisateur = utilisateurRepos.findById(event.getCommentDTO().getAuthorId())
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
-        // On récupère l'item par leur ID
-        Item item = teamRepo.findById(event.getCommentDTO().getItemId())
+       Item item = teamRepo.findById(event.getCommentDTO().getItemId())
                 .orElseThrow(() -> new RuntimeException("Item not found"));
-
         Comment comment = Comment.builder()
                 .item(item)
                 .content(event.getCommentDTO().getContenu())

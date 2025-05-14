@@ -27,6 +27,11 @@
 	<modules>
 		<module>blogService</module>
 		<module>polyinformatique-core-API</module>
+<<<<<<< Updated upstream
+=======
+		<module>ecommercePolyinformatique</module>
+		<module>polyinformatique-common</module>
+>>>>>>> Stashed changes
 	</modules>
 
 	<dependencies>
@@ -47,7 +52,11 @@
 			<artifactId>kotlin-stdlib</artifactId>
 			<version>1.9.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-core</artifactId>
+			<version>3.7.2</version>
+		</dependency>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>

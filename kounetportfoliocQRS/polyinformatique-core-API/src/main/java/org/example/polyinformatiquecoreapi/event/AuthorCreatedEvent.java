@@ -1,18 +1,18 @@
 package org.example.polyinformatiquecoreapi.event;
 
-import org.example.polyinformatiquecoreapi.dto.AuthorDTO;
+import org.example.polyinformatiquecoreapi.dto.CustomerBlogDTO;
 
 import java.io.Serializable;
 
-public class AuthorCreatedEvent  extends BaseEvent<String> implements Serializable {
+public class AuthorCreatedEvent extends BaseEvent<String> implements Serializable {
 
-    private AuthorDTO author;
-    public AuthorCreatedEvent(String id,AuthorDTO author) {
+    private CustomerBlogDTO author;
+    public AuthorCreatedEvent(String id, CustomerBlogDTO author) {
         super(id);
         this.author = author;
     }
 
-    public AuthorDTO getAuthor() {
+    public CustomerBlogDTO getAuthor() {
         return author;
     }
 }

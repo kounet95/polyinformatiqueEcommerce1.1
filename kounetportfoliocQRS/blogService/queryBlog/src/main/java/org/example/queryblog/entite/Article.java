@@ -5,8 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
+import com.example.polyinformatiquecommon.blog.Item;
 
-@Entity
+@Entity(name = "blogarticle")
 @AllArgsConstructor @NoArgsConstructor
 @SuperBuilder
 @Getter
@@ -18,4 +19,3 @@ public class Article extends Item{
     @JoinColumn(name = "domain_id")
     private Domain domain;
 }
-
