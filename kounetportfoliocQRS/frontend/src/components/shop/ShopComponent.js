@@ -3,7 +3,7 @@ import AlsoLikeComponent from './AlsoLikeComponent'
 
 const ShopDetailComponent = () => {
     return (
-        <div className="container-fluid pt-5">
+        <div className="container pt-5">
             <div className="row px-xl-5">
                 <div className="col-lg-3 col-md-12">
                     <div className="border-bottom mb-4 pb-4">

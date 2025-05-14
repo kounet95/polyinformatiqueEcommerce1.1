@@ -1,17 +1,14 @@
 import {BrowserRouter, Route, Routes, useRoutes} from "react-router-dom";
 import React from "react";
-import HomePage from "./pages/website/HomePage";
+import HomePage from "./pages/shop/HomePage";
 import ContactPage from "./pages/website/ContactPage";
 import PricingPage from "./pages/website/PricingPage";
 import ServicePage from "./pages/website/ServicePage";
 import TeamPage from "./pages/website/TeamPage";
 
-
-
 import BlogDetailsPage from "./pages/website/BlogDetailsPage";
 import BlogFormPage from "./pages/website/BlogFormPage";
-import SignInPage from "./pages/SignInPage";
-import SignUpPage from "./pages/SignUpPage";
+
 import ForgotPasswordPage from "./pages/website/ForgotPasswordPage";
 import DomainFormPage from "./pages/website/DomainFormPage";
 import DomainPage from "./pages/website/DomainPage";

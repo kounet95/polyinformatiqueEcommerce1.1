@@ -17,7 +17,11 @@ const SignInSignUpPage = () => {
                 </div>
             </nav>
         </div>
-       <LoginRegisterForm/>
+        <main className="main">
+            <div className="container ">
+                 <LoginRegisterForm/>
+            </div>
+        </main>
     </>
   )
 }

@@ -9,7 +9,7 @@ const LoginRegisterForm = () => {
 
   return (
     <div className="container mt-5">
-      <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+      <div className="card mx-auto mb-5" style={{ maxWidth: '800px' }}>
         <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs justify-content-center">
             <li className="nav-item">

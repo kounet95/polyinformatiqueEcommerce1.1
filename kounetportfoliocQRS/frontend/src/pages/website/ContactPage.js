@@ -17,8 +17,11 @@ const ContactPage = () => {
                     </div>
                 </nav>
             </div>
-
-            <ContactFormComponent />
+            <main className="main">
+                <div className="container ">
+                  <ContactFormComponent />
+                </div>
+            </main>
         </>
     );
 };

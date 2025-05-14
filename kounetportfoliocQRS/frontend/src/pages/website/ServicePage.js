@@ -14,7 +14,7 @@ const ServicePage = () => {
                         </ol>
                     </div>
                 </nav>
-            </div>
+         </div>
         <main className="main">
 
         <section id="about" className="about section light-background">

@@ -8,7 +8,7 @@ const FooterComponent = () => {
         <div className="row gy-4">
           <div className="col-lg-5 col-md-12 footer-about">
             <Link to="/" className="logo d-flex align-items-center">
-              <span className="sitename">Append</span>
+              <span className="sitename">LeContinent</span>
             </Link>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div className="social-links d-flex mt-4">
