@@ -9,7 +9,7 @@ const TeamPage = () => {
                 <nav className="breadcrumbs">
                     <div className="container">
                         <ol>
-                          <li><a href="/frontend/public">Accueil</a></li>
+                          <li><a href="/">Accueil</a></li>
                           <li className="current">Equipe</li>
                         </ol>
                     </div>
@@ -18,10 +18,7 @@ const TeamPage = () => {
             <section id="team" className="team section light-background">
 
      
-                <div className="container section-title" data-aos="fade-up">
-                    <h2>Team</h2>
-                    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-                </div>
+
 
       <div className="container">
 

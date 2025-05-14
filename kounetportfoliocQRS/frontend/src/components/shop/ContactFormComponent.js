@@ -3,9 +3,7 @@ import React from 'react'
 const ContactFormComponent = () => {
   return (
     <div className="container-fluid pt-5">
-        <div className="text-center mb-4">
-            <h2 className="section-title px-5"><span className="px-2">Contact For Any Queries</span></h2>
-        </div>
+
         <div className="row px-xl-5">
             <div className="col-lg-7 mb-5">
                 <div className="contact-form">
