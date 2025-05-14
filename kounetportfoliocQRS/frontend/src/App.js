@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes, useRoutes} from "react-router-dom";
+import { useRoutes} from "react-router-dom";
 import React from "react";
 import HomePage from "./pages/shop/HomePage";
 import ContactPage from "./pages/website/ContactPage";
