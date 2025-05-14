@@ -5,14 +5,14 @@ import ContactPage from "./pages/website/ContactPage";
 import PricingPage from "./pages/website/PricingPage";
 import ServicePage from "./pages/website/ServicePage";
 import TeamPage from "./pages/website/TeamPage";
-
 import BlogDetailsPage from "./pages/website/BlogDetailsPage";
 import BlogFormPage from "./pages/website/BlogFormPage";
-
 import ForgotPasswordPage from "./pages/website/ForgotPasswordPage";
 import DomainFormPage from "./pages/website/DomainFormPage";
 import DomainPage from "./pages/website/DomainPage";
 import BlogPage from "./pages/website/BlogPage";
+import EventPage from "./pages/website/EventPage";
+import ServicesDetailsPage from "./pages/website/ServicesDetailsPage";
 import SignInSignUpPage from "./pages/SignInSignUpPage";
 import CartPage from "./pages/shop/CartPage";
 import DetailPage from "./pages/shop/DetailPage";
@@ -31,6 +31,8 @@ function App() {
         { path: '/domain', element: <DomainPage /> },
         { path: '/cart', element: <CartPage /> },
         { path: '/product-details', element: <DetailPage /> },
+        { path: '/event', element: <EventPage /> },
+        { path: '/services-details', element: <ServicesDetailsPage /> },
 
         { path: '/sign', element: <SignInSignUpPage /> },
 

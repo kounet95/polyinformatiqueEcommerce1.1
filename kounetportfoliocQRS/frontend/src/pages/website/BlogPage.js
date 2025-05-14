@@ -18,7 +18,7 @@ const BlogPage = () => {
                 <nav className="breadcrumbs">
                     <div className="container">
                         <ol>
-                            <li><a href="/frontend/public">Accueil</a></li>
+                            <li><a href="/">Accueil</a></li>
                         <li className="current">Blog</li>
                         </ol>
                     </div>
