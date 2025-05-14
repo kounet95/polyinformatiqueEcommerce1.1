@@ -17,8 +17,8 @@ import DomainFormPage from "./pages/website/DomainFormPage";
 import DomainPage from "./pages/website/DomainPage";
 import BlogPage from "./pages/website/BlogPage";
 import SignInSignUpPage from "./pages/SignInSignUpPage";
-import CartPage from "./pages/lecontinent/CartPage";
-import DetailPage from "./pages/lecontinent/DetailPage";
+import CartPage from "./pages/shop/CartPage";
+import DetailPage from "./pages/shop/DetailPage";
 
 function App() {
     const routes = useRoutes([
@@ -33,7 +33,7 @@ function App() {
         { path: '/domain/new', element: <DomainFormPage /> },
         { path: '/domain', element: <DomainPage /> },
         { path: '/cart', element: <CartPage /> },
-        { path: '/lecontinent', element: <DetailPage /> },
+        { path: '/product-details', element: <DetailPage /> },
 
         { path: '/sign', element: <SignInSignUpPage /> },
 

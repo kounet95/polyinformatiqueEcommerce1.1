@@ -1,5 +1,5 @@
 import React from 'react'
-import ShopDetailComponent from "../../components/lecontinent/ShopDetailComponent";
+import ShopDetailComponent from "../../components/shop/ShopDetailComponent";
 import HeaderComponent from "../../components/website/HeaderComponent";
 
 
@@ -11,7 +11,7 @@ const DetailPage = () => {
             <nav className="breadcrumbs">
                 <div className="container">
                     <ol>
-                        <li><a href="/frontend/public">Accueil</a></li>
+                        <li><a href="/">Boutique</a></li>
                         <li className="current">Detail de produit</li>
                     </ol>
                 </div>

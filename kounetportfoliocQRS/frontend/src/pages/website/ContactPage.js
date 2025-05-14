@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentFormComponent from '../../components/website/CommentFormComponent';
 import HeaderComponent from '../../components/website/HeaderComponent';
-import ContactFormComponent from "../../components/lecontinent/ContactFormComponent";
+import ContactFormComponent from "../../components/shop/ContactFormComponent";
 
 const ContactPage = () => {
     return (

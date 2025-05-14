@@ -1,12 +1,22 @@
 import React from 'react';
 import HeaderComponent from '../../components/website/HeaderComponent';
+import ShopComponent from "../../components/shop/ShopComponent";
 
 const HomePage = () => {
     return (
         <>
-       
+          <div className="page-title" data-aos="fade">
+            <HeaderComponent title="Bienvenue au contient" />
+            <nav className="breadcrumbs">
+              <div className="container">
+                <ol>
+                  <li className="current">Accueil</li>
+                </ol>
+              </div>
+            </nav>
+          </div>
         <main className="main">
-
+          <ShopComponent/>
             
             <section id="hero" className="hero section dark-background">
         
@@ -65,6 +75,7 @@ const HomePage = () => {
               </div>
         
             </section>
+
         </main>
         </>
     );

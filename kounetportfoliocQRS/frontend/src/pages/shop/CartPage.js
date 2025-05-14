@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CartDetailComponent from "../../components/lecontinent/CartDetailComponent";
+import CartDetailComponent from "../../components/shop/CartDetailComponent";
 
 const CartPage = () => {
   return (
