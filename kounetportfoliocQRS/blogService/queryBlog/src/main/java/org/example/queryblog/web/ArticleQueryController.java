@@ -11,14 +11,20 @@ import org.example.queryblog.entite.Article;
 import org.example.queryblog.query.GetAllArticlesQuery;
 import org.example.queryblog.query.GetArticleByIdQuery;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import org.springframework.web.bind.annotation.*;
 =======
+=======
+>>>>>>> Stashed changes
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 import java.util.List;

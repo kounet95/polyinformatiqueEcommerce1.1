@@ -13,12 +13,16 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 @RequestMapping("/utilisateurs")
 @RequiredArgsConstructor
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:kounetportfoliocQRS/blogService/queryBlog/src/main/java/org/example/queryblog/web/UtilisateurQueryController.java
 @CrossOrigin
 public class UtilisateurQueryController {
 =======
 public class CustomerQueryController {
 >>>>>>> Stashed changes:kounetportfoliocQRS/blogService/queryBlog/src/main/java/org/example/queryblog/web/CustomerQueryController.java
+=======
+public class CustomerQueryController {
+>>>>>>> Stashed changes
 
     private final QueryGateway queryGateway;
 

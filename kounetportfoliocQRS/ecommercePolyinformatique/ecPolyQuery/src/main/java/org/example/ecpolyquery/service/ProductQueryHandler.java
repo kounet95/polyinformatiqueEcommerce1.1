@@ -12,7 +12,10 @@ import org.example.ecpolyquery.repos.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import org.springframework.data.domain.Pageable;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 import org.springframework.stereotype.Service;
@@ -32,6 +35,7 @@ public class ProductQueryHandler {
         log.debug("Handling GetAllProductsQuery with pagination: page={}, size={}", query.getPage(), query.getSize());
         Page<Product> productPage = productRepository.findAll(PageRequest.of(query.getPage(), query.getSize()));
         return PageResponse.from(productPage);
+<<<<<<< Updated upstream
     }
 
     @QueryHandler
@@ -39,6 +43,8 @@ public class ProductQueryHandler {
         log.debug("Handling GetPagedProductsQuery: page={}, size={}", query.getPage(), query.getSize());
         Pageable pageable = PageRequest.of(query.getPage(), query.getSize());
         return productRepository.findAll(pageable);
+=======
+>>>>>>> Stashed changes
     }
 
     @QueryHandler

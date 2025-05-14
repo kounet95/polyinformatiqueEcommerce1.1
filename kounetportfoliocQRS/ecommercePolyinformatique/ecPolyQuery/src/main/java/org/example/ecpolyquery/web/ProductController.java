@@ -28,6 +28,7 @@ public class ProductController {
         return queryGateway.query(new GetAllProductsQuery(page, size), 
                 ResponseTypes.instanceOf(PageResponse.class))
                 .thenApply(response -> (PageResponse<Product>) response);
+<<<<<<< Updated upstream
     }
 
     @GetMapping("/paged")
@@ -37,6 +38,8 @@ public class ProductController {
         return queryGateway.query(new GetPagedProductsQuery(page, size),
                 ResponseTypes.instanceOf(Page.class))
                 .thenApply(result -> (Page<Product>) result);
+=======
+>>>>>>> Stashed changes
     }
 
     @GetMapping("/{id}")

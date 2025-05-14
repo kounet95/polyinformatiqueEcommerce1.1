@@ -52,7 +52,10 @@ public class AuthorAggregate {
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
     @CommandHandler
     public void handle(UpdateAuthorCommand command) {
         log.info("Handling UpdateAuthorCommand for id: {}", command.getId());
@@ -90,5 +93,8 @@ public class AuthorAggregate {
         this.commentIds = null;
         this.itemIds = null;
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

@@ -22,6 +22,7 @@ public class CommandeBlogApplication {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             // Create Tags
             List<String> tagIds = new ArrayList<>();
             String tagId1 = UUID.randomUUID().toString();
@@ -189,6 +190,8 @@ public class CommandeBlogApplication {
             System.out.println("All sample data created successfully!");
         };
     }
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }

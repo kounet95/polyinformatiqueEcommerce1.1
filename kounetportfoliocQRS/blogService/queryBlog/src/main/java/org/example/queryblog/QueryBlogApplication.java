@@ -20,6 +20,10 @@ public class QueryBlogApplication {
     }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
